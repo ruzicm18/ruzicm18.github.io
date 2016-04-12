@@ -32,7 +32,7 @@
 <Content type="html" view="card">
 <![CDATA[
 <script type="text/javascript"> alert("ahoj"); </script>
-<script type="text/javascript"> debugger; </script> <!-- Start with Single Sign-On --> <script type="text/javascript" src="https://example.com/gadgets/sso.js"></script> <script type="text/javascript"> <!-- Fetch the array of content matches. --> matches = google.contentmatch.getContentMatches(); var matchList = document.createElement('UL'); var listItem; var extractedText; <!-- Iterate through the array and display output for each match. --> for (var match in matches) { for (var key in matches[match]) { listItem = document.createElement('LI'); extractedText = document.createTextNode(key + "::::: " + matches[match][key]); listItem.appendChild(extractedText); matchList.appendChild(listItem); } } document.body.appendChild(matchList); gadgets.window.adjustHeight(100); </script>
+<script type="text/javascript"> debugger; </script> <!-- Start with Single Sign-On --> <script type="text/javascript" src="https://example.com/gadgets/sso.js"></script> <script type="text/javascript"> <!-- Fetch the array of content matches. --> matches = ["Saab", "Volvo", "BMW"]; var matchList = document.createElement('UL'); var listItem; var extractedText; <!-- Iterate through the array and display output for each match. --> for (var match in matches) { for (var key in matches[match]) { listItem = document.createElement('LI'); extractedText = document.createTextNode(key + "::::: " + matches[match][key]); listItem.appendChild(extractedText); matchList.appendChild(listItem); } } document.body.appendChild(matchList); gadgets.window.adjustHeight(100); </script>
 ]]>
 </Content>
 </Module>
