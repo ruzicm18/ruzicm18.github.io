@@ -2,7 +2,7 @@
  From https://developers.google.com/gmail/contextual_gadgets#hello_world_example_code 
 -->
 <Module>
-<ModulePrefs title="Send Request" description="Send request to somewhere!!!" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
+<ModulePrefs title="Send Request" description="Send request to somewhere" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <!--  Declare feature dependencies.  -->
 <!--
  This one is not specific to Gmail contextual gadgets. 
@@ -34,7 +34,7 @@
 <script type="text/javascript"> alert("ahoj"); </script>
 <script type="text/javascript"> 
 	function sendRequest() {
-    	xhttp.open("GET", "/index.html", false);
+    	xhttp.open("GET", "http://ruzicm18.github.io/index.html", false);
     	xhttp.send();
     	document.getElementById("demo").innerHTML = xhttp.responseText;
 		
