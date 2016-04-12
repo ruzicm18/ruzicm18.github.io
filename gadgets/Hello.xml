@@ -2,7 +2,7 @@
  From https://developers.google.com/gmail/contextual_gadgets#hello_world_example_code 
 -->
 <Module>
-<ModulePrefs title="Hello World" description="Matches and echoes 'Hello World' string xxxxx in emails" height="20" author="Sarah M and Walter Q" author_email="..." author_location="Mountain View, CA">
+<ModulePrefs title="Send Request" description="Send request to somewhere" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <!--  Declare feature dependencies.  -->
 <!--
  This one is not specific to Gmail contextual gadgets. 
