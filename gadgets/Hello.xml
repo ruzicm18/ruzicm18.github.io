@@ -49,10 +49,9 @@
        	  	alert("nepovedlo se");
 		}
 	  };
+	  xhttp.open("GET", "https://redmine.eman.cz/projects/crm/representatives.json", true);
 	  xhttp.setRequestHeader("X-Redmine-API-Key", "4b2c25d224ae61d075a43f3fb3dbf76874eef02b");
 	  xhttp.setRequestHeader("Accept", "application/json");
-	  xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-	  xhttp.open("GET", "https://redmine.eman.cz/projects/crm/representatives.json", true);
 	  xhttp.send();
 	}
 	
