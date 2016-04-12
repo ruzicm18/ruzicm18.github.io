@@ -2,7 +2,7 @@
  From https://developers.google.com/gmail/contextual_gadgets#hello_world_example_code 
 -->
 <Module>
-<ModulePrefs title="Send Request" description="Send request to somewhere" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
+<ModulePrefs title="Send Request" description="Send request to somewhere!!!" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <!--  Declare feature dependencies.  -->
 <!--
  This one is not specific to Gmail contextual gadgets. 
@@ -33,7 +33,19 @@
 <![CDATA[
 <script type="text/javascript"> alert("ahoj"); </script>
 <script type="text/javascript"> 
+	function sendRequest() {
+    	xhttp.open("GET", "/index.html", false);
+    	xhttp.send();
+    	document.getElementById("demo").innerHTML = xhttp.responseText;
+		
+		var anotherButton = document.createElement("BUTTON");
+		var t = document.createTextNode(xhttp.responseText);
+		anotherButton.appendChild(t);
+		document.body.appendChild(anotherButton);
+	}
+	
 	var btn = document.createElement("BUTTON");        // Create a <button> element
+	btn.onclick = sendRequest;
 	var t = document.createTextNode("CLICK ME");       // Create a text node
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
