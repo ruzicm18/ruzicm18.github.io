@@ -31,25 +31,23 @@
 -->
 <Content type="html" view="card">
 <![CDATA[
-<script type="text/javascript"> alert("ahoj"); </script>
-<script type="text/javascript"> 
-	function sendRequest() {
-    	var request = makeHttpObject();
-    	request.open("GET", "http://ruzicm18.github.io/index.html", true);
-    	request.send(null);
-    	request.onreadystatechange = function() {
-      		if (request.readyState == 4) {
-        	if (request.status == 200) {
-				var anotherButton = document.createElement("BUTTON");
-				var t = document.createTextNode(request.responseText);
-				anotherButton.appendChild(t);
-				document.body.appendChild(anotherButton);				
-			} else { 
-          	  	alert("nepovedlo se");
-			}
-      	}
-    };	
 
+<script type="text/javascript"> alert("ahoj"); </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type="text/javascript">
+	function sendRequest() {
+		var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			var anotherButton = document.createElement("BUTTON");
+			var t = document.createTextNode(xhttp.responseText);
+			anotherButton.appendChild(t);
+			document.body.appendChild(anotherButton);	
+	    } else { 
+       	  	alert("nepovedlo se");
+		}
+	  };
+	  xhttp.open("GET", "http://ruzicm18.github.io/index.html", true);
+	  xhttp.send();
 	}
 	
 	var btn = document.createElement("BUTTON");        // Create a <button> element
