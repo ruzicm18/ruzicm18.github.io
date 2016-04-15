@@ -51,7 +51,6 @@
 	  };
 	  xhttp.open("GET", "https://redmine2.dev.eman.cz/projects.json", true);
 	  xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
-	  xhttp.setRequestHeader("Accept", "application/json");
 	  xhttp.send();
 	}
 	
