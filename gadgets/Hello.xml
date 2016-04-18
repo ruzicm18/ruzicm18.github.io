@@ -31,28 +31,28 @@
 -->
 <Content type="html" view="card">
 <![CDATA[
-
-<script type="text/javascript"> alert("hhhh"); </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
-	alert("ahoj");
 	
-	function sendRequest() {
 		var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    if (xhttp.readyState == 4 && xhttp.status == 200) {
-			var anotherButton = document.createElement("P");
-			var t = document.createTextNode(xhttp.responseText);
-			anotherButton.appendChild(t);
-			document.body.appendChild(anotherButton);	
+			var object = JSON.parse(xhttp.responseText);		
+			var select = document.createElement("select");
+			
+			for (var i = 0; i < object.projects.length; i++ ) {
+		    	select.setAttribute("value", object.projects[i].id);
+		    	var t = document.createTextNode(object.projects[i].name);
+		    	select.appendChild(t);
+			}
+
+			document.body.appendChild(select);	
 	    } else { 
-       	  	alert("nepovedlo se");
 		}
 	  };
 	  xhttp.open("GET", "https://redmine2.dev.eman.cz/projects.json", true);
 	  xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
 	  xhttp.send();
-	}
 	
 	var btn = document.createElement("BUTTON");        // Create a <button> element
 	btn.onclick = sendRequest;
