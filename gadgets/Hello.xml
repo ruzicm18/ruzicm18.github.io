@@ -34,7 +34,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
 		
-		createIssue() {
+		function createIssue() {
 			var xhttp = new XMLHttpRequest();
 	  		xhttp.onreadystatechange = function() {
 	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
