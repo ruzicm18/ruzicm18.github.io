@@ -33,7 +33,21 @@
 <![CDATA[
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
-	
+		
+		createIssue() {
+			var xhttp = new XMLHttpRequest();
+	  		xhttp.onreadystatechange = function() {
+	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
+					alert("povedlo se");
+	    		} else { }
+			}
+	  
+	  	   xhttp.open("POST", "https://redmine2.dev.eman.cz/issues.json", true);
+	   	   xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
+		   var data = '{"issue":{"subject":"API TEST","description":"468468"},"project_id":"acid"}';
+	  	   xhttp.send(data);
+	}; 
+		
 		var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -42,7 +56,7 @@
 
 			for (var i = 0; i < object.projects.length; i++) {
 			    var x = document.createElement("option");
-			    x.setAttribute("value", object.projects[i].id);
+			    x.setAttribute("value", object.projects[i].identifier);
 			    var t = document.createTextNode(object.projects[i].name);
 			    x.appendChild(t);
 			    select.appendChild(x);
@@ -56,7 +70,7 @@
 	  xhttp.send();
 	
 	var btn = document.createElement("BUTTON");        // Create a <button> element
-	btn.onclick = sendRequest;
+	btn.onclick = createIssue;
 	var t = document.createTextNode("Vytvořit issue");       // Create a text node
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
