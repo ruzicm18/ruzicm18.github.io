@@ -49,7 +49,7 @@
 		   var e = document.getElementById("IDForSelect");
 		   var strProjectID = e.options[e.selectedIndex].value;
 		   
-		   var data = '{"issue":{"subject":"API TEST","description":"468468"},"project_id":' + strProjectID + '}';
+		   var data = '{"issue":{"subject":"API TEST","description":"468468"},"project_id":"' + strProjectID + '"}';
 	  	   xhttp.send(data);
 	}; 
 		
