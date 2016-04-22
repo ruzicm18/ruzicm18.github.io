@@ -1,6 +1,6 @@
 <ExtractorSpec platform="gmail" language="en">
  <Response platform="gmail" format="cardgadget">
- <Output name="email_body">
+ <Output name="email_body" value=".*">
  {@__BODY__}</Output>
  </Response>
 </ExtractorSpec>
