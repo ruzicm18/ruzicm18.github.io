@@ -91,15 +91,6 @@
 	var t = document.createTextNode("Vytvořit issue");       // Create a text node
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
-	
-	matches = google.contentmatch.getContentMatches();        
-        matches[0]["email_body"];
-	
-	alert("1: " + matches[0]["email_body"]);
-	alert("2: " + matches[0]["subject"]);
-	alert("3: " + matches[1]["email_body"]);
-	alert("4: " + matches[1]["subject"]);
-	
 </script>
 ]]>
 </Content>
