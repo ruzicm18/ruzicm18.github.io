@@ -37,7 +37,7 @@
 		function createIssue() {
 			var xhttp = new XMLHttpRequest();
 	  		xhttp.onreadystatechange = function() {
-	    			if (xhttp.readyState == 4 && xhttp.status == 200) {
+	    			if (xhttp.readyState == 4 && xhttp.status == 201) {
 	    				var object = JSON.parse(xhttp.responseText);
 	    				alert('http://redmine2.dev.eman.cz/issues/' + object.issue.id.toString());
 					var win = window.open('http://redmine2.dev.eman.cz/issues/' + object.issue.id.toString(), '_blank');
