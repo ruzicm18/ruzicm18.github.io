@@ -37,40 +37,48 @@
 		function createIssue() {
 			var xhttp = new XMLHttpRequest();
 	  		xhttp.onreadystatechange = function() {
-	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
-					alert("povedlo se");
-	    		} else { }
+	    			if (xhttp.readyState == 4 && xhttp.status == 200) {
+	    				var object = JSON.parse(xhttp.responseText);
+	    			
+					var win = window.open('http://redmine2.dev.eman.cz/issues/' + object.issue.id, '_blank');
+					if(win) {
+    						//Browser has allowed it to be opened
+    						win.focus();
+ 					} else {
+						//Broswer has blocked it
+    						alert('Please allow popups for this site');
+					}
+		    		} else { }
 			}
 	  
-	  	   xhttp.open("POST", "https://redmine2.dev.eman.cz/issues.json", true);
-		   xhttp.setRequestHeader("Content-Type", "application/json");
-	   	   xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
+	  	   	xhttp.open("POST", "https://redmine2.dev.eman.cz/issues.json", true);
+		   	xhttp.setRequestHeader("Content-Type", "application/json");
+	   	   	xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
 		   
-		   var e = document.getElementById("IDForSelect");
-		   var strProjectID = e.options[e.selectedIndex].value;
+		   	var e = document.getElementById("IDForSelect");
+		   	var strProjectID = e.options[e.selectedIndex].value;
 		   
-		   var data = '{"issue":{"subject":"API TEST","description":"468468"},"project_id":"' + strProjectID + '"}';
-	  	   xhttp.send(data);
-	}; 
+		   	var data = '{"issue":{"subject":"API TEST","description":"468468"},"project_id":"' + strProjectID + '"}';
+	  	   	xhttp.send(data);
+	    	}; 
 		
 		var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
-	    if (xhttp.readyState == 4 && xhttp.status == 200) {
-			var object = JSON.parse(xhttp.responseText);					
-			var select = document.createElement("select");
-			select.setAttribute("id", "IDForSelect");
+	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
+				var object = JSON.parse(xhttp.responseText);					
+				var select = document.createElement("select");
+				select.setAttribute("id", "IDForSelect");
 
-			for (var i = 0; i < object.projects.length; i++) {
-			    var x = document.createElement("option");
-			    x.setAttribute("value", object.projects[i].identifier);
-			    var t = document.createTextNode(object.projects[i].name);
-			    x.appendChild(t);
-			    select.appendChild(x);
-			}
-			document.body.appendChild(select);
-	    } else { 
-		}
-	  };
+				for (var i = 0; i < object.projects.length; i++) {
+			    		var x = document.createElement("option");
+			    		x.setAttribute("value", object.projects[i].identifier);
+			    		var t = document.createTextNode(object.projects[i].name);
+			    		x.appendChild(t);
+			    		select.appendChild(x);
+				}
+				document.body.appendChild(select);
+	    		} else { }
+	  	};
 	  xhttp.open("GET", "https://redmine2.dev.eman.cz/projects.json", true);
 	  xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
 	  xhttp.send();
