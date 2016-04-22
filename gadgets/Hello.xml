@@ -57,8 +57,11 @@
 		   
 		   	var e = document.getElementById("IDForSelect");
 		   	var strProjectID = e.options[e.selectedIndex].value;
+		   	
+		   	matches = google.contentmatch.getContentMatches();        
+        		var bodyText = matches[0]["email_body"];
 		   
-		   	var data = '{"issue":{"subject":"API TEST","description":"468468"},"project_id":"' + strProjectID + '"}';
+		   	var data = '{"issue":{"subject":"API TEST","description":"' + bodyText + '"},"project_id":"' + strProjectID + '"}';
 	  	   	xhttp.send(data);
 	    	}; 
 		
@@ -89,10 +92,6 @@
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
 	
-	matches = google.contentmatch.getContentMatches();        
-        var bodyText = matches[0]["email_body"];
-	
-	alert(bodyText);
 </script>
 ]]>
 </Content>
