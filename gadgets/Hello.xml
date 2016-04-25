@@ -59,7 +59,7 @@
 		   	var strProjectID = e.options[e.selectedIndex].value;
 		   	
 		   	matches = google.contentmatch.getContentMatches();        
-        		var bodyText = document.getElementsByClassName('a3s aXjCH')[0].innerHTML;//matches[0]["email_body"];
+        		var bodyText = matches[0]["email_body"];
 		   
 		   	var data = '{"issue":{"subject":"API TEST","description":"' + bodyText + '"},"project_id":"' + strProjectID + '"}';
 	  	   	xhttp.send(data);
@@ -94,7 +94,7 @@
 	
 	var MyDiv1 = document.getElementsByClassName('a3s aXjCH')[0].innerHTML;
 	
-	alert(MyDiv1);
+	alert("xxxxx" + MyDiv1);
 	
 </script>
 ]]>
