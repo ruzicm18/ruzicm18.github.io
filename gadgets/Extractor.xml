@@ -1,4 +1,4 @@
-<OpenCOBData id="Extractor">
+<OpenCOBData id="contextExtractor">
   <ExtractorSpec platform="gmail" language="en">
         <Search>        
             <Pattern input_fields="body">     
