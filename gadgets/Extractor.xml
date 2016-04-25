@@ -1,7 +1,7 @@
 <OpenCOBData id="Extractor">
   <ExtractorSpec platform="gmail" language="en">
         <Search>        
-            <Pattern input_fields="body">     
+            <Pattern input_fields="email_body">     
                 <![CDATA[(.*)]]>       
             </Pattern>      
         </Search>   
