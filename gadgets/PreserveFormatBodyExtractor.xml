@@ -3,7 +3,7 @@
     <ExtractorSpec platform="gmail" language="en">
         <Search input_type="text">
             <Pattern input_fields="from_email,body">
-                <![CDATA[(?P<sender_name>.*)]]>
+                <![CDATA[(?P.*)]]>
             </Pattern>
         </Search>
         <Response platform="gmail" format="cardgadget">
