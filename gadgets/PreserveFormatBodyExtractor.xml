@@ -1,5 +1,7 @@
-<ExtractorSpec platform="gmail" language="en">
- <Response platform="gmail" format="cardgadget">
- <Output name="email_body" value=".*"></Output>
- </Response>
-</ExtractorSpec>
+<OpenCOBData id="JiraExtractor">
+ <ExtractorSpec platform="gmail" language="en">
+  <Response platform="gmail" format="cardgadget">
+  <Output name="email_body" value=".*"></Output>
+  </Response>
+ </ExtractorSpec>
+</OpenCOBData>
