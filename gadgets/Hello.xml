@@ -2,10 +2,10 @@
  From https://developers.google.com/gmail/contextual_gadgets#hello_world_example_code 
 -->
 
-<Extension id="extractorID" type="contextExtractor">
+<Extension id="extractorID" type="cardgadget">
   <Name>Email Sender</Name>
   <Url>http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml</Url>
-  <Param name="body" value=".*"/>
+  <Param name="email_body" value=".*"/>
   <Triggers ref="HelloWorldGadget"/>
   <Scope ref="senderScope"/>
   <Container name="mail"/>
