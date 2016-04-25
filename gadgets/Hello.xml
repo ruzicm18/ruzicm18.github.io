@@ -63,7 +63,7 @@
         		
         		
 		   
-		   	var data = '{"issue":{"subject":"API TEST","description":"' + bodyText + '"},"project_id":"' + strProjectID + '"}';
+		   	var data = '{"issue":{"subject":"API TEST","description":' + bodyText + '},"project_id":"' + strProjectID + '"}';
 	  	   	xhttp.send(data);
 	    	}; 
 		
