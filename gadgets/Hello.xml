@@ -91,6 +91,11 @@
 	var t = document.createTextNode("Vytvořit issue");       // Create a text node
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
+	
+	var MyDiv1 = document.getElementsByClassName('a3s aXjCH')[0].innerHTML;
+	
+	alert(MyDiv1);
+	
 </script>
 ]]>
 </Content>
