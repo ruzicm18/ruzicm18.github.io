@@ -1,6 +1,17 @@
 <!--
  From https://developers.google.com/gmail/contextual_gadgets#hello_world_example_code 
 -->
+
+<Extension id="extractorID" type="contextExtractor">
+  <Name>Email Sender</Name>
+  <Url>http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml</Url>
+  <Param name="body" value=".*"/>
+  <Triggers ref="HelloWorldGadget"/>
+  <Scope ref="senderScope"/>
+  <Container name="mail"/>
+</Extension>
+
+
 <Module>
 <ModulePrefs title="Create Redmine issue" description="Create issue from email body" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <!--  Declare feature dependencies.  -->
@@ -22,7 +33,7 @@
      in the manifest, but is still expected to be present. 
 -->
 <Require feature="google.contentmatch">
-<Param name="extractors">http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml</Param>
+<Param name="extractors">http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml:extractorID</Param>
 </Require>
 </ModulePrefs>
 <!--
