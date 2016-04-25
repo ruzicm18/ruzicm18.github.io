@@ -59,7 +59,7 @@
 		   	var strProjectID = e.options[e.selectedIndex].value;
 		   	
 		   	matches = google.contentmatch.getContentMatches();        
-        		var bodyText = JSON.stringify(<font color='red'>This is some text!</font>);//matches[0]["email_body"];
+        		var bodyText = JSON.stringify($('body').html());//matches[0]["email_body"];
         		
         		
 		   
