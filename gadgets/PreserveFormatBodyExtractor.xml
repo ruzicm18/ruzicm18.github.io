@@ -11,7 +11,7 @@
     <Name>ADX Stuff</Name>
     <Url>http://ruzicm18.github.io/gadgets/Extractor.xml</Url>
     <Triggers ref="ADXGadget"/>
-    <Scope ref="emailBody"/>
+    <Scope ref="email_body"/>
     <Container name="mail"/>
   </Extension>
  
@@ -21,7 +21,7 @@
     <Container name="mail"/>
   </Extension>
  
-  <Scope id="emailBody">
+  <Scope id="email_body">
     <Url>tag:google.com,2010:auth/contextual/extractor/BODY</Url>
     <Reason>
       This application searches the message body of each email for text related to Add-in Express products.
