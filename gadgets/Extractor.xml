@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenCOBData id="contextExtractor">
   <ExtractorSpec platform="gmail" language="en">
         <Search>        
             <Pattern input_fields="body">     
@@ -18,3 +20,4 @@
       <Output name="email_body">{@__BODY__}</Output>
     </Response>
   </ExtractorSpec>
+</OpenCOBData>
