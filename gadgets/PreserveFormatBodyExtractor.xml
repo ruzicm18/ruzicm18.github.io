@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OpenCOBData id="SubjectMatcher">
-  <AuthorInfo
-    description="Extracts sender from emails and replies automatically."
-    author="Elliott Glover"/>
-  <ExtractorSpec id="SubjectMatcherExtractor" platform="gmail" language="en">
-    <Search input_type="text">
-      <Pattern input_fields="from_email"></Pattern>
-        <![CDATA[(.*)]]>
-      </Pattern>
-    </Search>
-    <Response platform="gmail" format="cardgadget"> //outputs returned values
-      <Output name="Subject"> {@outputSubject}</Output>
-      <Output name=".*"> {@outputToEmail}</Output>
-    </Response>
-  </ExtractorSpec>
+<OpenCOBData id="SenderNameExtractor">  
+    <ExtractorSpec platform="gmail" language="en">
+        <Search input_type="text">
+            <Pattern input_fields="from_email,body">
+                <![CDATA[(?P<sender_name>.*)]]>
+            </Pattern>
+        </Search>
+        <Response platform="gmail" format="cardgadget">
+            <Output name="sender_name">{@__FROM_PERSONAL__}</Output>
+        </Response>
+    </ExtractorSpec>
 </OpenCOBData>
