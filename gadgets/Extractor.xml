@@ -1,6 +1,6 @@
 <OpenCOBData id="extractorID">
   <ExtractorSpec platform="gmail" language="en">
-  <!-- <Search input_type="text">
+    <Search input_type="text">
       input_fields - a comma-separated list of
        email parts to look in.
        Supported values: from_email, to_email, cc_email, bcc_email,
@@ -8,7 +8,7 @@
        Default: subject,body. 
       <Pattern input_fields="body">
       </Pattern>
-    </Search> -->
+    </Search>
     <!-- Set up the output. -->
     <Response platform="gmail" format="cardgadget">
       <!-- outputSource specifies what to return.
