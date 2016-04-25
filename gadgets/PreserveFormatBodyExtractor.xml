@@ -1,13 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<OpenCOBData id="SenderNameExtractor">  
-    <ExtractorSpec platform="gmail" language="en">
-        <Search input_type="text">
-            <Pattern input_fields="from_email,body">
-                <![CDATA[(?P.*)]]>
-            </Pattern>
-        </Search>
-        <Response platform="gmail" format="cardgadget">
-            <Output name="sender_name">{@__FROM_PERSONAL__}</Output>
-        </Response>
-    </ExtractorSpec>
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenCOBData id="Agile">
+ <ExtractorSpec platform="gmail" language="en">
+   <Response platform="gmail" format="cardgadget">
+     <Output name="email_sender">{@__FROM_ADDRESS__}</Output>
+     <Output name="email_name">{@__FROM_PERSONAL__}</Output>
+     <Output name="email_subject">{@__SUBJECT__}</Output>
+   </Response>
+ </ExtractorSpec>
 </OpenCOBData>
+       
+<Extension id="FromEmailAddressExtractor" type="contextExtractor">
+  <Name>Email ids in From</Name>
+  <Url>623403448797:Agile</Url>
+  <Triggers ref="AgileCRMGadget"/>
+  <Scope ref="emailFrom"/>
+   <Scope ref="emailName"/>
+   <Scope ref="emailBody"/>
+   <Scope ref="emailSubject"/>
+   <Container name="mail"/>
+</Extension>
+       
+<Extension id="SubjectBodyEmailAddressExtractor" type="contextExtractor">
+  <Name>Email ids in Subject or body</Name>
+  <Url>google.com:EmailAddressExtractor</Url>
+  <Param name="email" value=".*"/>
+  <Triggers ref="AgileCRMGadget"/>
+  <Scope ref="emailBody"/>
+  <Scope ref="emailSubject"/>
+  <Container name="mail"/>
+</Extension>
