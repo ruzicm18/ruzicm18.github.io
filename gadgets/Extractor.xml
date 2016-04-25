@@ -1,6 +1,6 @@
 <OpenCOBData id="extractorID">
   <ExtractorSpec platform="gmail" language="en">
-    <Search input_type="text">
+    <Search>
     </Search>
     <!-- Set up the output. -->
     <Response platform="gmail" format="cardgadget">
@@ -13,7 +13,7 @@
        __CC_EMAIL__, __BCC_EMAIL__, __MESSAGE_ID__, __LIST_ID__,
        or __LIST_UNSUBSCRIBE__. In this case, you don't need to use
        the <Pattern> tag. -->
-      <Output name="email_body">ahoj</Output>
+      <Output name="email_body">{@__BODY__}</Output>
     </Response>
   </ExtractorSpec>
 </OpenCOBData>
