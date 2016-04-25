@@ -6,8 +6,6 @@
        Supported values: from_email, to_email, cc_email, bcc_email,
        date_sent, date_received, subject, body, id, list_id, list_unsubscribe.
        Default: subject,body. 
-      <Pattern input_fields="body">
-      </Pattern>
     </Search>
     <!-- Set up the output. -->
     <Response platform="gmail" format="cardgadget">
