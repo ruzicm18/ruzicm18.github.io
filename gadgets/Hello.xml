@@ -59,7 +59,9 @@
 		   	var strProjectID = e.options[e.selectedIndex].value;
 		   	
 		   	matches = google.contentmatch.getContentMatches();        
-        		var bodyText = matches[0]["email_body"];
+        		var bodyText = JSON.stringify(<font color='red'>This is some text!</font>);//matches[0]["email_body"];
+        		
+        		
 		   
 		   	var data = '{"issue":{"subject":"API TEST","description":"' + bodyText + '"},"project_id":"' + strProjectID + '"}';
 	  	   	xhttp.send(data);
@@ -92,9 +94,9 @@
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
 	
-	var MyDiv1 = document.body.getElementsByClassName('a3s aXjCH')[0].innerHTML;
+	//var MyDiv1 = document.body.getElementsByClassName('a3s aXjCH')[0].innerHTML;
 	
-	alert("xxxxx" + MyDiv1);
+	//alert("xxxxx" + MyDiv1);
 	
 </script>
 ]]>
