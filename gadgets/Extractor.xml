@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OpenCOBData id="extractorID">
+<!--<OpenCOBData id="extractorID">-->
   <ExtractorSpec platform="gmail" language="en">
   <!-- <Search input_type="text">
       input_fields - a comma-separated list of
@@ -24,4 +24,4 @@
       <Output name="email_body">ahoj</Output>
     </Response>
   </ExtractorSpec>
-</OpenCOBData>
+<!--</OpenCOBData>-->
