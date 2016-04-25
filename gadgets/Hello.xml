@@ -94,7 +94,7 @@
 	btn.appendChild(t);                                // Append the text to <button>
 	document.body.appendChild(btn);                    // Append <button> to <body>
 	
-	var MyDiv1 = document.body.getElementsByClassName('gB xu')[0].innerHTML;
+	var MyDiv1 = window.document.body.getElementsByClassName('a3s aXjCH')[0].innerHTML;
 	
 	alert("xxxxx" + MyDiv1);
 	
