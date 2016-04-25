@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OpenCOBData id="extractorID">
-  <ExtractorSpec platform="gmail" language="en">
-  <!-- <Search input_type="text">
-      input_fields - a comma-separated list of
-       email parts to look in.
-       Supported values: from_email, to_email, cc_email, bcc_email,
-       date_sent, date_received, subject, body, id, list_id, list_unsubscribe.
-       Default: subject,body. 
-      <Pattern input_fields="body">
-      </Pattern>
-    </Search> -->
-    <!-- Set up the output. -->
-    <Response platform="gmail" format="cardgadget">
-      <!-- outputSource specifies what to return.
-       To return part of the string that matched the expression,
-       use a sub-pattern name specified in the <Pattern>.
-       To return an entire email field, use a built-in
-       variable: __SUBJECT__, __BODY__, __DATE_SENT__,
-       __DATE_RECEIVED, __FROM_ADDRESS__, __TO_ADDRESS__,
-       __CC_EMAIL__, __BCC_EMAIL__, __MESSAGE_ID__, __LIST_ID__,
-       or __LIST_UNSUBSCRIBE__. In this case, you don't need to use
-       the <Pattern> tag. -->
-      <Output name="email_body">ahoj</Output>
-    </Response>
-  </ExtractorSpec>
-</OpenCOBData>
+<ApplicationManifest xmlns="http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml">
+    <script id="tinyhippos-injected" />
+    <Extension id="HelloWorldExtractor" type="contextExtractor">
+        <Name>Hello World Extractor</Name>
+        <Url>http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml</Url>
+        <Triggers ref="HelloWorld" />
+        <Scope ref="emailBody" />
+        <Scope ref="emailSubject" />
+        <Container name="mail" />
+    </Extension>
+    <Extension id="HelloWorld" type="gadget">
+        <Name>HelloWorld Gadget</Name>
+        <Url>http://ruzicm18.github.io/gadgets/Hello.xml</Url>
+        <Container name="mail" />
+        <!--  Uncomment this to enable Caja.  -->
+        <!--  Param name="caja" value="enabled"/>  -->
+    </Extension>
+    <Scope id="emailBody">
+        <Url>tag:google.com,2010:auth/contextual/extractor/BODY</Url>
+        <Reason>Necessary for reason 1</Reason>
+    </Scope>
+    <Scope id="emailSubject">
+        <Url>tag:google.com,2010:auth/contextual/extractor/SUBJECT</Url>
+        <Reason>Necessary for reason 2</Reason>
+    </Scope>
+</ApplicationManifest>
