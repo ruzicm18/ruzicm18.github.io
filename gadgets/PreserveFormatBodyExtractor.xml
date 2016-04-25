@@ -1,31 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<OpenCOBData id="Agile">
- <ExtractorSpec platform="gmail" language="en">
-   <Response platform="gmail" format="cardgadget">
-     <Output name="email_sender">{@__FROM_ADDRESS__}</Output>
-     <Output name="email_name">{@__FROM_PERSONAL__}</Output>
-     <Output name="email_subject">{@__SUBJECT__}</Output>
-   </Response>
- </ExtractorSpec>
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenCOBData id="extractorID">
+  <ExtractorSpec platform="gmail" language="en">
+    <Search input_type="text">
+      <!-- input_fields - a comma-separated list of
+       email parts to look in.
+       Supported values: from_email, to_email, cc_email, bcc_email,
+       date_sent, date_received, subject, body, id, list_id, list_unsubscribe.
+       Default: subject,body. -->
+      <Pattern input_fields="subject,body">
+        <![CDATA[(.*)]]>
+      </Pattern>
+    </Search>
+    <!-- Set up the output. -->
+    <Response platform="gmail" format="cardgadget">
+      <!-- outputSource specifies what to return.
+       To return part of the string that matched the expression,
+       use a sub-pattern name specified in the <Pattern>.
+       To return an entire email field, use a built-in
+       variable: __SUBJECT__, __BODY__, __DATE_SENT__,
+       __DATE_RECEIVED, __FROM_ADDRESS__, __TO_ADDRESS__,
+       __CC_EMAIL__, __BCC_EMAIL__, __MESSAGE_ID__, __LIST_ID__,
+       or __LIST_UNSUBSCRIBE__. In this case, you don't need to use
+       the <Pattern> tag. -->
+      <Output name="email_body">{@__BODY__}</Output>
+    </Response>
+  </ExtractorSpec>
 </OpenCOBData>
-       
-<Extension id="FromEmailAddressExtractor" type="contextExtractor">
-  <Name>Email ids in From</Name>
-  <Url>623403448797:Agile</Url>
-  <Triggers ref="AgileCRMGadget"/>
-  <Scope ref="emailFrom"/>
-   <Scope ref="emailName"/>
-   <Scope ref="emailBody"/>
-   <Scope ref="emailSubject"/>
-   <Container name="mail"/>
-</Extension>
-       
-<Extension id="SubjectBodyEmailAddressExtractor" type="contextExtractor">
-  <Name>Email ids in Subject or body</Name>
-  <Url>google.com:EmailAddressExtractor</Url>
-  <Param name="email" value=".*"/>
-  <Triggers ref="AgileCRMGadget"/>
-  <Scope ref="emailBody"/>
-  <Scope ref="emailSubject"/>
-  <Container name="mail"/>
-</Extension>
