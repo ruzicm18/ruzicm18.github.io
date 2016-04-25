@@ -1,7 +1,10 @@
 <OpenCOBData id="Extractor">
   <ExtractorSpec platform="gmail" language="en">
-    <Search>
-    </Search>
+        <Search>        
+            <Pattern input_fields="body">     
+                <![CDATA[(.*)]]>       
+            </Pattern>      
+        </Search>   
     <!-- Set up the output. -->
     <Response platform="gmail" format="cardgadget">
       <!-- outputSource specifies what to return.
