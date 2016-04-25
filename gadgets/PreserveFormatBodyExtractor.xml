@@ -6,7 +6,7 @@
   <ExtractorSpec id="SubjectMatcherExtractor" platform="gmail" language="en">
     <Search input_type="text">
       <Pattern input_fields="from_email"></Pattern>
-        <![CDATA[(?x)(.*)]]>
+        <![CDATA[(.*)]]>
       </Pattern>
     </Search>
     <Response platform="gmail" format="cardgadget"> //outputs returned values
