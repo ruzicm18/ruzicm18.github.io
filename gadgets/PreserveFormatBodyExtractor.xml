@@ -3,8 +3,7 @@
     <script id="tinyhippos-injected" />
     <Extension id="HelloWorldExtractor" type="contextExtractor">
         <Name>Hello World Extractor</Name>
-        <Url>http://ruzicm18.github.io/gadgets/PreserveFormatBodyExtractor.xml</Url>
-        <Triggers ref="HelloWorld" />
+        <Url>http://ruzicm18.github.io/gadgets/Extractor.xml</Url>
         <Scope ref="emailBody" />
         <Scope ref="emailSubject" />
         <Container name="mail" />
