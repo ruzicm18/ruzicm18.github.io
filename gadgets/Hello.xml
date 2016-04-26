@@ -6,8 +6,7 @@
 <ModulePrefs title="Create Redmine issue" description="Create issue from email body" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <Require feature="dynamic-height"/>
 <Require feature="google.contentmatch">
-<Param name="extractors">google.com:EmailBodyExtractor,google.com:RawSubjectExtractor
-</Param>
+<Param name="extractors">google.com:EmailBodyExtractor</Param>
 </Require>
 </ModulePrefs>
 <Content type="html" view="card">
