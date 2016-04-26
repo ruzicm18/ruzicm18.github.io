@@ -83,7 +83,7 @@
 	field.setAttribute("value", "Nový úkol");
 	document.body.appendChild(field);
 	
-	var x = rootElement.getElementsByClassName("a3s aXjCH");
+	var x = window.parent.getElementsByClassName("a3s aXjCH");
 </script>
 ]]>
 </Content>
