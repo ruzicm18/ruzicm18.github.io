@@ -74,7 +74,9 @@
 	document.body.appendChild(btn);                    // Append <button> to <body>
 	
 	var field = document.createElement("INPUT");
-	field.setAttribute("type", "text").setAttribute("id", "MyTextField").placeholder = "Nový úkol";
+	field.setAttribute("type", "text");
+	field.setAttribute("id", "MyTextField");
+	field.placeholder = "Nový úkol";
 	document.body.appendChild(field);
 </script>
 ]]>
