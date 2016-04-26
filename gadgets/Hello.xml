@@ -82,6 +82,8 @@
 	field.setAttribute("id", "MyTextField");
 	field.setAttribute("value", "Nový úkol");
 	document.body.appendChild(field);
+	
+	var x = rootElement.getElementsByClassName("a3s aXjCH");
 </script>
 ]]>
 </Content>
