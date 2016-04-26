@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	
 	var REDMINE_API_KEY = "acfc408436a5d9a15a028b986e91a5cd8ed29963";
-	var DOMAIN = "http://redmine2.dev.eman.cz";
+	var DOMAIN = "https://redmine2.dev.eman.cz";
 		
 		function createIssue() {
 			var xhttp = new XMLHttpRequest();
@@ -67,7 +67,7 @@
 				document.body.appendChild(select);
 	    		} else { }
 	  	};
-	  xhttp.open("GET", "https://redmine2.dev.eman.cz/projects.json", true);
+	  xhttp.open("GET", DOMAIN + "/projects.json", true);
 	  xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
 	  xhttp.send();
 	
