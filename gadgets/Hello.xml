@@ -13,13 +13,16 @@
 <![CDATA[
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
+	
+	var REDMINE_API_KEY = "acfc408436a5d9a15a028b986e91a5cd8ed29963";
+	var DOMAIN = "http://redmine2.dev.eman.cz";
 		
 		function createIssue() {
 			var xhttp = new XMLHttpRequest();
 	  		xhttp.onreadystatechange = function() {
 	    			if (xhttp.readyState == 4 && xhttp.status == 201) {
 	    				var object = JSON.parse(xhttp.responseText);
-					var win = window.open('http://redmine2.dev.eman.cz/issues/' + object.issue.id.toString(), '_blank');
+					var win = window.open( DOMAIN + '/issues/' + object.issue.id.toString(), '_blank');
 					if(win) {
     						//Browser has allowed it to be opened
     						win.focus();
@@ -30,9 +33,9 @@
 		    		} else { }
 			}
 	  
-	  	   	xhttp.open("POST", "https://redmine2.dev.eman.cz/issues.json", true);
+	  	   	xhttp.open("POST", DOMAIN + "/issues.json", true);
 		   	xhttp.setRequestHeader("Content-Type", "application/json");
-	   	   	xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
+	   	   	xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
 		   
 		   	var e = document.getElementById("IDForSelect");
 		   	var strProjectID = e.options[e.selectedIndex].value;
@@ -65,7 +68,7 @@
 	    		} else { }
 	  	};
 	  xhttp.open("GET", "https://redmine2.dev.eman.cz/projects.json", true);
-	  xhttp.setRequestHeader("X-Redmine-API-Key", "acfc408436a5d9a15a028b986e91a5cd8ed29963");
+	  xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
 	  xhttp.send();
 	
 	var btn = document.createElement("BUTTON");        // Create a <button> element
