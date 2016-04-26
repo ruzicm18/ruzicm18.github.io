@@ -40,9 +40,10 @@
 		   	matches = google.contentmatch.getContentMatches();        
         		var bodyText = matches[0]["email_body"];
         		
-        		
-		   
-		   	var data = '{"issue":{"subject":"API TEST","description":"' + bodyText + '"},"project_id":"' + strProjectID + '"}';
+        		var issue = document.getElementById("MyTextField");
+		   	var name = issue.value;
+		   	
+		   	var data = '{"issue":{"subject":"' + name + '","description":"' + bodyText + '"},"project_id":"' + strProjectID + '"}';
 	  	   	xhttp.send(data);
 	    	}; 
 		
@@ -76,7 +77,7 @@
 	var field = document.createElement("INPUT");
 	field.setAttribute("type", "text");
 	field.setAttribute("id", "MyTextField");
-	field.placeholder = "Nový úkol";
+	field.setAttribute("value", "Nový úkol");
 	document.body.appendChild(field);
 </script>
 ]]>
