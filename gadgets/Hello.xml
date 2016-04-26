@@ -4,32 +4,11 @@
 
 <Module>
 <ModulePrefs title="Create Redmine issue" description="Create issue from email body" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
-<!--  Declare feature dependencies.  -->
-<!--
- This one is not specific to Gmail contextual gadgets. 
--->
 <Require feature="dynamic-height"/>
-<!--
- The next feature, Caja, is optional, and is supported for
-     use only within test domains. Uncomment the tag only for
-     non-production gadgets. 
--->
-<!--  <Require feature="caja"/>  -->
-<!--
- The next feature, google.contentmatch, is required for all
-     Gmail contextual gadgets.
-     <Param> - specify one or more comma-separated extractor IDs in
-     a param named "extractors". This line is overridden by the extractor ID
-     in the manifest, but is still expected to be present. 
--->
 <Require feature="google.contentmatch">
-<Param name="extractors">http://ruzicm18.github.io/gadgets/Extractor.xml</Param>
+<Param name="extractors">google.com:EmailBodyExtractor</Param>
 </Require>
 </ModulePrefs>
-<!--
- Define the content type and display location. The settings
-   "html" and "card" are required for all Gmail contextual gadgets. 
--->
 <Content type="html" view="card">
 <![CDATA[
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
