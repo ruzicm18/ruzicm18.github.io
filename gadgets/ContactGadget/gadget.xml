@@ -50,8 +50,8 @@
 				var leftColumn = document.createElement("TD");
 				leftRow.appendChild(leftColumn);
 				
-				var t = document.createTextNode( "jednoduchy text" );
-				leftRow.appendChild(t);
+				var text_detail = document.createTextNode( "jednoduchy text" );
+				leftRow.appendChild(text_detail);
 				
 				table_contact.appendChild(subTable);
 					
