@@ -14,12 +14,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
 	
-	var field = document.createElement("INPUT");
-	field.setAttribute("type", "text");
-	field.setAttribute("id", "MyTextField");
+	var REDMINE_API_KEY = "acfc408436a5d9a15a028b986e91a5cd8ed29963";
+	var DOMAIN = "https://redmine2.dev.eman.cz";
 	
    	var matches = google.contentmatch.getContentMatches();        
-	var bodyText = matches[0]["sender_email"];
+	var email = matches[0]["sender_email"];
+	
+	var xhttp = new XMLHttpRequest();
+  	xhttp.onreadystatechange = function() {
+    		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			var object = JSON.parse(xhttp.responseText);					
+			
+			var field = document.createElement("INPUT");
+			field.setAttribute("type", "text");
+			field.setAttribute("id", "MyTextField");
+			field.setAttribute("value", object.contacts[0].company);
+			document.body.appendChild(field);
+			}
+			document.body.appendChild(select);
+    		} else { }
+  	};
+  	xhttp.open("GET", DOMAIN + '/projects/crm/representatives.json?contact_email=' + email, true);
+  	xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
+  	xhttp.send();
+
 	
 	field.setAttribute("value", bodyText);
 	document.body.appendChild(field);
