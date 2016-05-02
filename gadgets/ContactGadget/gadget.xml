@@ -1,0 +1,30 @@
+<!--
+ From https://developers.google.com/gmail/contextual_gadgets#hello_world_example_code 
+-->
+
+<Module>
+<ModulePrefs title="Create Redmine issue" description="Create issue from email body" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
+<Require feature="dynamic-height"/>
+<Require feature="google.contentmatch">
+<Param name="extractors">google.com:SenderEmailExtractor</Param>
+</Require>
+</ModulePrefs>
+<Content type="html" view="card">
+<![CDATA[
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	var field = document.createElement("INPUT");
+	field.setAttribute("type", "text");
+	field.setAttribute("id", "MyTextField");
+	
+   	var matches = google.contentmatch.getContentMatches();        
+	var bodyText = matches[0]["sender_email"];
+	
+	field.setAttribute("value", bodyText);
+	document.body.appendChild(field);
+	
+</script>
+]]>
+</Content>
+</Module>
