@@ -36,10 +36,12 @@
 				var table_contact = document.createElement("TD");
 				
 				var contact_name  = document.createElement("H2");
-				var t = document.createTextNode( contact.prefix + contact.first_name + contact.middle_name + contact.family_name + contact.suffix );
+				var t = document.createTextNode( contact.prefix + " " + contact.first_name + " " + contact.middle_name + " " +contact.family_name + " " + contact.suffix );
+				
 				contact_name.appendChild(t);
 				
 				table_contact.appendChild(contact_name);
+				table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
 				
 				
