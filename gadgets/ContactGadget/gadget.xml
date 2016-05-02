@@ -53,7 +53,7 @@
 				leftRow.appendChild(leftColumn);
 				
 				var text_detail = document.createTextNode( "jednoduchy text" );
-				leftRow.appendChild(text_detail);
+				leftColumn.appendChild(text_detail);
 									
 				table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
