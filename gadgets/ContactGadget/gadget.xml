@@ -31,8 +31,6 @@
 			field.setAttribute("value", object.contacts[0].company);
 			document.body.appendChild(field);
 			}
-			document.body.appendChild(select);
-    		} else { }
   	};
   	xhttp.open("GET", DOMAIN + '/projects/crm/representatives.json?contact_email=' + email, true);
   	xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
