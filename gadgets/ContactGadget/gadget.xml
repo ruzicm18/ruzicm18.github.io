@@ -41,6 +41,8 @@
 				table_contact.appendChild(contact_name);
 				
 				var subTable = document.createElement("TABLE");
+				table_contact.appendChild(subTable);
+				
 				var tableBody = document.createElement("TBODY");
 				subTable.appendChild(tableBody);
 				
@@ -52,9 +54,7 @@
 				
 				var text_detail = document.createTextNode( "jednoduchy text" );
 				leftRow.appendChild(text_detail);
-				
-				table_contact.appendChild(subTable);
-					
+									
 				table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
 				
