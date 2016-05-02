@@ -3,7 +3,7 @@
 -->
 
 <Module>
-<ModulePrefs title="Create Redmine issue" description="Create issue from email body" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
+<ModulePrefs title="Contact detail" description="Shows detail information of email sender" height="20" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <Require feature="dynamic-height"/>
 <Require feature="google.contentmatch">
 <Param name="extractors">google.com:SenderEmailExtractor</Param>
@@ -25,12 +25,22 @@
     		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			var object = JSON.parse(xhttp.responseText);					
 			
-			var field = document.createElement("INPUT");
-			field.setAttribute("type", "text");
-			field.setAttribute("id", "MyTextField");
-			field.setAttribute("value", object.contacts[0].company);
-			document.body.appendChild(field);
+			if ( object.total_count == 0 ) {
+				var h = document.createElement("H2");                // Create a <h1> element
+				var t = document.createTextNode("Pro odesílatele se v Redmine nenachází žadný kontakt");     // Create a text node
+				h.appendChild(t);
+				document.body.appendChild(h);
+			} else {
+				var table_contact = document.createElement("TD");
+				var contact_name  = document.createElement("H2");
+				
+				table_contact.appendChild(contact_name);
+				
+				
+				
+				document.body.appendChild(table_contact);
 			}
+		}
   	};
   	xhttp.open("GET", DOMAIN + '/projects/crm/representatives.json?contact_email=' + email, true);
   	xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
