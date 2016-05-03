@@ -11,6 +11,11 @@
 </ModulePrefs>
 <Content type="html" view="card">
 <![CDATA[
+	<STYLE TYPE="text/css">
+	<!--
+	TD{font-family: Arial; font-size: 10pt;}
+	--->
+	</STYLE>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
 	
@@ -42,7 +47,7 @@
 				
 				var c, r, t, left, right;
 				    t = document.createElement('table');
-					t.style.fontSize = "x-small";
+					//t.style.fontSize = "x-small";
 				    r = t.insertRow(0); 
 				    left = r.insertCell(0);
 				    right = r.insertCell(1);
