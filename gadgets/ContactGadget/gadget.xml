@@ -40,9 +40,22 @@
 				contact_name.appendChild(t);
 				table_contact.appendChild(contact_name);
 				
+				/*
 				var subTable = document.createElement("TABLE");
 				table_contact.appendChild(subTable);
+				*/
 				
+				var c, r, t;
+				    t = document.createElement('table');
+				    r = t.insertRow(0); 
+				    c = r.insertCell(0);
+				    c.innerHTML = 123;
+				    c = r.insertCell(1);
+				    c.innerHTML = 456;
+					
+				table_contact.appendChild(t);
+				
+				/*
 				var tableBody = document.createElement("TBODY");
 				subTable.appendChild(tableBody);
 				
@@ -56,7 +69,7 @@
 				leftColumn.appendChild(text_detail);
 									
 				table_contact.innerText = table_contact.innerText.replace('undefined', '');
-				
+				*/
 				
 				
 				document.body.appendChild(table_contact);
