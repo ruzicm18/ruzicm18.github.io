@@ -119,7 +119,7 @@
 		    var right = r.insertCell(1);
 			left.innerHTML = "Tags: ";
 			var text = "";
-			for (var j = 0; j < contact.tags.length j++ ) {
+			for (var j = 0; j < contact.tags.length; j++ ) {
 			    var text = text + ", " + contact.tags[j];
 			}
 			right.innerHTML = text;
