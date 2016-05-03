@@ -120,7 +120,11 @@
 			left.innerHTML = "Tags: ";
 			var text = "";
 			for (var j = 0; j < contact.tags.length; j++ ) {
-			    var text = text + ", " + contact.tags[j];
+				if (j == 0) {
+					text = contact.tags[j];
+				} else {
+			    	text = text + ", " + contact.tags[j];
+				}
 			}
 			right.innerHTML = text;
 		}
