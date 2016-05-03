@@ -37,7 +37,7 @@
 				
 				var contact_name  = document.createElement("H2");
 				var text = document.createTextNode( contact.prefix + " " + contact.first_name + " " + contact.middle_name + " " +contact.family_name + " " + contact.suffix );
-				text.innerText = text.innerText.replace('undefined', '');
+				text = text.replace('undefined', '');
 				contact_name.appendChild(text);
 				table_contact.appendChild(contact_name);
 				
