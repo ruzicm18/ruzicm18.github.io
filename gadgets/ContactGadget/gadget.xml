@@ -113,17 +113,31 @@
 			left.innerHTML = "Assignee: ";
 			right.innerHTML = contact.assignee;
 		}
+		if ( contact.tags != null && contact.tags.length > 0 ) {
+		    var r = table.insertRow(i++); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			left.innerHTML = "Tags: ";
+			var text = "";
+			for (var j = 0; j < contact.tags.length j++ ) {
+			    var text = text + ", " + contact.tags[j];
+			}
+			right.innerHTML = text;
+		}
 		
 		
 	};
 	
 	function fillRightTable (table, contact) {
-	    var r = table.insertRow(0); 
-	    var left = r.insertCell(0);
-	    var right = r.insertCell(1);
-		
-		left.innerHTML = "Ahoj: ";
-		right.innerHTML = "nazadar";
+		var i = 0;
+		if ( contact.company != null ) {
+		    var r = table.insertRow(i++); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			
+			left.innerHTML = "Company: ";
+			right.innerHTML = contact.company;
+		}
 	};
 	
 	
