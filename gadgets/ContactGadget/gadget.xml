@@ -52,11 +52,8 @@
 					fillLeftTable (leftTable, contact);
 					fillLeftTable (rightTable, contact);
 					
-					left.appendChild(leftTable);
-					right.appendChild(rightTable);
-					
-					left.innerHTML = 123;
-				    right.innerHTML = 456;
+					left.innerHTML(leftTable);
+					right.innerHTML(rightTable);
 					
 				table_contact.appendChild(t);
 				
