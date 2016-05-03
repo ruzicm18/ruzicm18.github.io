@@ -36,8 +36,8 @@
 				var table_contact = document.createElement("TD");
 				
 				var contact_name  = document.createElement("H2");
-				var t = document.createTextNode( contact.prefix + " " + contact.first_name + " " + contact.middle_name + " " +contact.family_name + " " + contact.suffix );
-				contact_name.appendChild(t);
+				var text = document.createTextNode( contact.prefix + " " + contact.first_name + " " + contact.middle_name + " " +contact.family_name + " " + contact.suffix );
+				contact_name.appendChild(text);
 				table_contact.appendChild(contact_name);
 				
 				var c, r, t, left, right;
@@ -70,18 +70,23 @@
 	function fillLeftTable (table, contact) {
 		var i = 0;
 		if ( contact.company != null ) {
-		    var r = table.insertRow(i); 
+		    var r = table.insertRow(0); 
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Company";
+			left.innerHTML = "Company: ";
 			right.innerHTML = contact.company;
 		}
 		
 	};
 	
 	function fillRightTable (table, contact) {
-
+	    var r = table.insertRow(0); 
+	    var left = r.insertCell(0);
+	    var right = r.insertCell(1);
+		
+		left.innerHTML = "Ahoj: ";
+		right.innerHTML = "nazadar";
 	};
 	
 	
