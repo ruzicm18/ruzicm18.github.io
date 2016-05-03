@@ -137,7 +137,7 @@
 		if ( contact.phones != null && contact.phones.length > 0 ) {
 			var text = "";
 			for (var j = 0; j < contact.phones.length; j++ ) {
-			    var r = table.insertRow(j + i++ ); 
+			    var r = table.insertRow(i++ ); 
 			    var left = r.insertCell(0);
 			    var right = r.insertCell(1);
 				left.innerHTML = contact.phones[j][0];
