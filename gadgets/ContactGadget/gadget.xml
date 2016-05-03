@@ -69,14 +69,14 @@
 	
 	function fillLeftTable (table, contact) {
 		var i = 0;
-		if ( contact.company != null ) {
+		//if ( contact.company != null ) {
 		    var r = table.insertRow(0); 
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
 			left.innerHTML = "Company: ";
-			right.innerHTML = contact.company;
-		}
+			right.innerHTML = "Spol ";
+			//}
 		
 	};
 	
