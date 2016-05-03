@@ -42,7 +42,7 @@
 				
 				var c, r, t, left, right;
 				    t = document.createElement('table');
-					t.css({backgroundColor: "#ffe", borderLeft: "5px solid #ccc" });
+					t.css("font-size", "8px");
 				    r = t.insertRow(0); 
 				    left = r.insertCell(0);
 				    right = r.insertCell(1);
