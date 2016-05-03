@@ -40,37 +40,27 @@
 				contact_name.appendChild(t);
 				table_contact.appendChild(contact_name);
 				
-				/*
-				var subTable = document.createElement("TABLE");
-				table_contact.appendChild(subTable);
-				*/
-				
-				var c, r, t;
+				var c, r, t, left, right;
 				    t = document.createElement('table');
 				    r = t.insertRow(0); 
-				    c = r.insertCell(0);
-				    c.innerHTML = 123;
-				    c = r.insertCell(1);
-				    c.innerHTML = 456;
+				    left = r.insertCell(0);
+				    right = r.insertCell(1);
+					
+					var leftTable = document.createElement('table');
+					var rightTable = document.createElement('table');
+					
+					fillLeftTable (leftTable, contact);
+					fillLeftTable (rightTable, contact);
+					
+					left.appendChild(leftTable);
+					right.appendChild(rightTable);
+					
+					left.innerHTML = 123;
+				    right.innerHTML = 456;
 					
 				table_contact.appendChild(t);
 				
-				/*
-				var tableBody = document.createElement("TBODY");
-				subTable.appendChild(tableBody);
-				
-				var leftRow = document.createElement("TR");
-				tableBody.appendChild(leftRow);
-				
-				var leftColumn = document.createElement("TD");
-				leftRow.appendChild(leftColumn);
-				
-				var text_detail = document.createTextNode( "jednoduchy text" );
-				leftColumn.appendChild(text_detail);
-									
 				table_contact.innerText = table_contact.innerText.replace('undefined', '');
-				*/
-				
 				
 				document.body.appendChild(table_contact);
 			}
@@ -79,6 +69,23 @@
   	xhttp.open("GET", DOMAIN + '/projects/crm/representatives.json?contact_email=' + email, true);
   	xhttp.setRequestHeader("X-Redmine-API-Key", REDMINE_API_KEY);
   	xhttp.send();
+	
+	function fillLeftTable (table, contact) {
+		var i = 0;
+		if ( contact.company != null ) {
+		    var r = table.insertRow(i); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			
+			left.innerHTML = "Company";
+			right.innerHTML = contact.company;
+		}
+	};
+	
+	function fillRightTable (table, contact) {
+		
+	};
+	
 	
 	function onPageLoaded() {
 	               gadgets.window.adjustHeight();
