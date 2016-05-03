@@ -46,15 +46,17 @@
 				    left = r.insertCell(0);
 				    right = r.insertCell(1);
 					
+					table_contact.appendChild(t);
+					
 					var leftTable = document.createElement('table');
 					var rightTable = document.createElement('table');
 					
+					left.appendChild(leftTable);
+					right.appendChild(rightTable);
 					
-					left.appendChild(fillLeftTable (leftTable, contact));
-					right.appendChild(fillLeftTable (rightTable, contact));
-					
-				table_contact.appendChild(t);
-				
+					fillLeftTable (leftTable, contact);
+					fillRightTable (rightTable, contact);
+									
 				table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
 				document.body.appendChild(table_contact);
@@ -76,11 +78,10 @@
 			right.innerHTML = contact.company;
 		}
 		
-		return table;
 	};
 	
 	function fillRightTable (table, contact) {
-		return table;
+
 	};
 	
 	
