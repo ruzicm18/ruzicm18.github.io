@@ -3,7 +3,7 @@
 -->
 
 <Module>
-<ModulePrefs title="Contact detail" description="Shows detail information of email sender" height="100%" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
+<ModulePrefs title="Contact detail" description="Shows detail information of email sender" height="200" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <Require feature="dynamic-height"/>
 <Require feature="google.contentmatch">
 <Param name="extractors">google.com:SenderEmailExtractor</Param>
@@ -13,7 +13,7 @@
 <![CDATA[
 	<STYLE TYPE="text/css">
 	<!--
-	TD{font-family: Arial; font-size: 10pt;}
+	TD{font-family: Arial; font-size: 0.4em;}
 	--->
 	</STYLE>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
