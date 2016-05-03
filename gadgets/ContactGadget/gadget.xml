@@ -42,6 +42,7 @@
 				
 				var c, r, t, left, right;
 				    t = document.createElement('table');
+					t.css("font-size", 0.75em);
 				    r = t.insertRow(0); 
 				    left = r.insertCell(0);
 				    right = r.insertCell(1);
