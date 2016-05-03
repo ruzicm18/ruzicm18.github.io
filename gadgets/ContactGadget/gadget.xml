@@ -36,7 +36,7 @@
 				var table_contact = document.createElement("TD");
 				
 				var contact_name  = document.createElement("H2");
-				var text = document.createTextNode( contact.prefix + " " + contact.first_name + " " + getValue( contact.middle_name ) + " " +contact.family_name + " " + contact.suffix );
+				var text = document.createTextNode( getValue( contact.prefix ) + " " + getValue( contact.first_name ) + " " + getValue( contact.middle_name ) + " " + getValue( contact.family_name ) + " " +getValue( contact.suffix ) );
 								contact_name.appendChild(text);
 				table_contact.appendChild(contact_name);
 				
