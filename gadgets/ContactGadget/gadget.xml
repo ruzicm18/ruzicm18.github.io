@@ -49,11 +49,9 @@
 					var leftTable = document.createElement('table');
 					var rightTable = document.createElement('table');
 					
-					fillLeftTable (leftTable, contact);
-					fillLeftTable (rightTable, contact);
 					
-					left.innerHTML(leftTable);
-					right.innerHTML(rightTable);
+					left.appendChild(fillLeftTable (leftTable, contact));
+					right.appendChild(fillLeftTable (rightTable, contact));
 					
 				table_contact.appendChild(t);
 				
@@ -77,10 +75,12 @@
 			left.innerHTML = "Company";
 			right.innerHTML = contact.company;
 		}
+		
+		return table;
 	};
 	
 	function fillRightTable (table, contact) {
-		
+		return table;
 	};
 	
 	
