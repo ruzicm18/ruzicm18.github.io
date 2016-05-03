@@ -69,14 +69,47 @@
 	
 	function fillLeftTable (table, contact) {
 		var i = 0;
-		//if ( contact.company != null ) {
-		    var r = table.insertRow(0); 
+		if ( contact.company != null ) {
+		    var r = table.insertRow(i++); 
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
 			left.innerHTML = "Company: ";
-			right.innerHTML = "Spol ";
-			//}
+			right.innerHTML = contact.company;
+		}
+		if ( contact.job_title != null ) {
+		    var r = table.insertRow(i++); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			
+			left.innerHTML = "Job title: ";
+			right.innerHTML = contact.job_title;
+		}
+		if ( contact.birth_day != null ) {
+		    var r = table.insertRow(i++); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			
+			left.innerHTML = "Birthday: ";
+			right.innerHTML = contact.birth_day;
+		}
+		if ( contact.skype != null ) {
+		    var r = table.insertRow(i++); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			
+			left.innerHTML = "Skype: ";
+			right.innerHTML = contact.skype;
+		}
+		if ( contact.assignee != null ) {
+		    var r = table.insertRow(i++); 
+		    var left = r.insertCell(0);
+		    var right = r.insertCell(1);
+			
+			left.innerHTML = "Assignee: ";
+			right.innerHTML = contact.assignee;
+		}
+		
 		
 	};
 	
