@@ -159,10 +159,10 @@
 	function onPageLoaded() {
 	               gadgets.window.adjustHeight();
 	                }
-					
-	$("myTable").css {
-		font-size:0.75em;
-	  }
+			
+	TD {
+		font-family: Arial; font-size:0.75em;
+	}		
 					
 	
 </script>
