@@ -143,6 +143,15 @@
 				right.innerHTML = contact.phones[j].phone;
 			}
 		}
+		if ( contact.emails != null && contact.emails.length > 0 ) {
+			for (var j = 0; j < contact.emails.length; j++ ) {
+			    var r = table.insertRow(i++ ); 
+			    var left = r.insertCell(0);
+			    var right = r.insertCell(1);
+				left.innerHTML = contact.emails[j].category;
+				right.innerHTML = contact.emails[j].email;
+			}
+		}
 	};
 	
 	
