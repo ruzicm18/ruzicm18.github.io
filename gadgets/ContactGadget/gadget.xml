@@ -134,13 +134,15 @@
 	
 	function fillRightTable (table, contact) {
 		var i = 0;
-		if ( contact.company != null ) {
-		    var r = table.insertRow(i++); 
-		    var left = r.insertCell(0);
-		    var right = r.insertCell(1);
-			
-			left.innerHTML = "Company: ";
-			right.innerHTML = contact.company;
+		if ( contact.phones != null && contact.phones.length > 0 ) {
+			var text = "";
+			for (var j = 0; j < contact.phones.length; j++ ) {
+			    var r = table.insertRow(j + i++ ); 
+			    var left = r.insertCell(0);
+			    var right = r.insertCell(1);
+				left.innerHTML = contact.phones[j][0];
+				right.innerHTML = contact.phones[j][1];
+			}
 		}
 	};
 	
