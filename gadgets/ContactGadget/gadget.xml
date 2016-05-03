@@ -48,6 +48,10 @@
 					
 					table_contact.appendChild(t);
 					
+					
+					left.innerHTML = "123";
+					right.innerHTML = "123";
+					/*
 					var leftTable = document.createElement('table');
 					var rightTable = document.createElement('table');
 					
@@ -56,7 +60,7 @@
 					
 					fillLeftTable (leftTable, contact);
 					fillRightTable (rightTable, contact);
-									
+					*/				
 				table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
 				document.body.appendChild(table_contact);
