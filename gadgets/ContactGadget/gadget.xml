@@ -46,11 +46,12 @@
 				    left = r.insertCell(0);
 				    right = r.insertCell(1);
 					
-					table_contact.appendChild(t);
+					
 					
 					
 					left.innerHTML = "123";
 					right.innerHTML = "123";
+					table_contact.appendChild(t);
 					/*
 					var leftTable = document.createElement('table');
 					var rightTable = document.createElement('table');
