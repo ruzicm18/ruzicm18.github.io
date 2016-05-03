@@ -160,7 +160,7 @@
 	               gadgets.window.adjustHeight();
 	                }
 					
-	.main {
+	$("myTable").main {
 		font-size:0.75em;
 	  }
 					
