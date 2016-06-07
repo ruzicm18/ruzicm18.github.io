@@ -62,22 +62,14 @@
        * are found an appropriate message is printed.
        */
       function listLabels() {
-        var request = gapi.client.gmail.users.labels.list({
+        var request = gapi.client.gmail.users.getProfile({
           'userId': 'me'
         });
 
         request.execute(function(resp) {
           var labels = resp.labels;
           appendPre('Labels:');
-
-          if (labels && labels.length > 0) {
-            for (i = 0; i < labels.length; i++) {
-              var label = labels[i];
-              appendPre(label.name)
-            }
-          } else {
-            appendPre('No Labels found.');
-          }
+		  appendPre(resp.emailAddress);
         });
       }
 
