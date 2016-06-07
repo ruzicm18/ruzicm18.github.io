@@ -95,7 +95,7 @@
 	var button = document.createElement('button');
 	  button.innerHTML = 'Authorize';
 	  button.id = "authorize-button";
-	  button.onclick = "handleAuthClick(event)";
+	  button.onclick = "handleAuthClickevent";
 	  // where do we want to have the button to appear?
 	  // you can append it to another element just by doing something like
 	  // document.getElementById('foobutton').appendChild(button);
