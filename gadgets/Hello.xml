@@ -95,7 +95,12 @@
 	var button = document.createElement('button');
 	  button.innerHTML = 'Authorize';
 	  button.id = "authorize-button";
-	  button.onclick = "handleAuthClickevent";
+	  button.onclick = function(){
+	      gapi.auth.authorize(
+	        {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+	        handleAuthResult);
+	      return false;
+	  }
 	  // where do we want to have the button to appear?
 	  // you can append it to another element just by doing something like
 	  // document.getElementById('foobutton').appendChild(button);
