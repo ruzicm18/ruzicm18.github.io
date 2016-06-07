@@ -91,7 +91,12 @@
     var CLIENT_ID = '308244421658-p0772f91bek31loqrv2961vkvhok7kg8.apps.googleusercontent.com';
 
     var SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
-
+	
+	var div = document.createElement('div');
+	div.id = "authorize-div";
+	div.style ="display: none";
+	document.body.appendChild(div);
+	
 	var button = document.createElement('button');
 	  button.innerHTML = 'Authorize';
 	  button.id = "authorize-button";
