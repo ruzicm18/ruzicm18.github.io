@@ -551,6 +551,10 @@
 	field.setAttribute("value", "Nový úkol");
 	document.body.appendChild(field);
 	
+		function onPageLoaded() {
+	               gadgets.window.adjustHeight();
+	                }	
+	
 </script>
   <script type="text/javascript">
     // Your Client ID can be retrieved from your project in the Google
