@@ -655,6 +655,9 @@
       var textContent = document.createTextNode(message + '\n');
       pre.appendChild(textContent);
     }
+    function onPageLoaded() {
+	               gadgets.window.adjustHeight();
+	                }	
 
   </script>
   <script src="https://apis.google.com/js/client.js?onload=checkAuth">
