@@ -470,6 +470,10 @@
         $(element).after(div);
       }
       
+     function onPageLoaded() {
+	               gadgets.window.adjustHeight();
+	                }
+      
       //runTranslation();
       
     </script>
