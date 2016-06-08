@@ -83,7 +83,6 @@
 	field.setAttribute("value", "Nový úkol");
 	document.body.appendChild(field);
 	
-	var x = window.parent.getElementsByClassName("a3s aXjCH");
 </script>
   <script type="text/javascript">
     // Your Client ID can be retrieved from your project in the Google
