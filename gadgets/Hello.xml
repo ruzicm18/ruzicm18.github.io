@@ -14,8 +14,6 @@
 <!DOCTYPE html>
 <html>
 
-<html>
-
   <head>
     <title>Demo: Getting an email address using the Google+ Sign-in button</title>
     <!-- Include the API client and Google+ client. -->
@@ -27,7 +25,7 @@
     <div id="gConnect" class="button">
       <button class="g-signin"
           data-scope="email"
-          data-clientid="308244421658-p0772f91bek31loqrv2961vkvhok7kg8.apps.googleusercontent.com"
+          data-clientid='308244421658-p0772f91bek31loqrv2961vkvhok7kg8.apps.googleusercontent.com'
           data-callback="onSignInCallback"
           data-theme="dark"
           data-cookiepolicy="single_host_origin">
@@ -69,8 +67,6 @@
   }
 
   </script>
-
-</html>
 
 </html>
 ]]>
