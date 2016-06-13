@@ -49,7 +49,7 @@
    * Sets up an API call after the Google API client loads.
    */
   function apiClientLoaded() {
-    gapi.client.plus.people.get({userId: 'jan.test@emancommerce.com'}).execute(handleEmailResponse);
+    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
   }
 
   /**
