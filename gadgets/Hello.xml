@@ -58,7 +58,7 @@
    * @param resp The API response object with the user email and profile information.
    */
   function handleEmailResponse(resp) {
-    document.getElementById('responseContainer').value = 'ID: ' + resp.id);
+    document.getElementById('responseContainer').value = 'ID: ' + resp.id;
   }
 
   </script>
