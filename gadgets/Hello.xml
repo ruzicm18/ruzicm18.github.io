@@ -61,9 +61,9 @@
   var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    		if (xhttp.readyState == 4 && xhttp.status == 200)
-	    		   alert(1);
+	    		   alert(xhttp.responseText);
 	      };
-	  xhttp.open("GET", "https://script.googleapis.com/v1/scripts/Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz:run", true);
+	  xhttp.open("GET", "https://script.google.com/a/macros/emancommerce.com/s/AKfycbwY4HV7zvCQ9zK5wwuwCCOL8DIhQXyRu_DaRpwxl177-4oZIis/exec", true);
 	  xhttp.send(request);
   
   </script>
