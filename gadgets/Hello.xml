@@ -56,15 +56,17 @@
     document.getElementById('responseContainer').value = 'ID: ' + resp.id;
   }
   
-  		var xhttp = new XMLHttpRequest();
+  var request = {
+            'function': 'doGet'
+            };
+  
+  var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
 	    		   alert(1);
 	      };
 	  xhttp.open("GET", "https://script.googleapis.com/v1/scripts/Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz:run", true);
-	  xhttp.send({
-            'function': 'getFoldersUnderRoot'
-            });
+	  xhttp.send(request);
   
   </script>
 </html>
