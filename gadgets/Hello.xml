@@ -56,9 +56,7 @@
     document.getElementById('responseContainer').value = 'ID: ' + resp.id;
   }
   
-  var request = {
-            'function': 'doGet'
-            };
+  var request = "{'function': 'doGet'}";
   
   var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
