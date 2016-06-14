@@ -68,15 +68,12 @@ var request = {
 };
   
   // Make the request.
-var op = gapi.client.request({
+gapi.client.request({
     'root': 'https://script.googleapis.com',
     'path': 'v1/scripts/' + scriptId + ':run',
     'method': 'POST',
     'body': request
-});
-
-// Log the results of the request.
-op.execute(function(resp) {
+}).execute(function(resp) {
   if (resp.error && resp.error.status) {
     // The API encountered a problem before the script started executing.
     console.log('Error calling API: ' + JSON.stringify(resp, null, 2));
