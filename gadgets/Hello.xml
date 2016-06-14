@@ -42,6 +42,9 @@
 // under Publish > Deploy as API executable.
 var scriptId = "Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz";
 
+
+gapi.client.load('request', 'v1', callback);
+
 // Create execution request.
 var request = {
     'function': 'doGet',
