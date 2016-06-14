@@ -78,7 +78,7 @@
         // Make the API request.
         var op = gapi.client.request({
             'root': 'https://script.googleapis.com',
-            'path': 'v1/scripts/' + scriptId + ':run',
+            'path': 'v1/scripts/' + scriptId + '&output=embed' + ':run',
             'method': 'POST',
             'body': request
         });
