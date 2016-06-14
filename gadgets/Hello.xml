@@ -16,7 +16,7 @@
   <head>
     <title>Demo: Getting an email address using the Google+ Sign-in button</title>
     <!-- Include the API client and Google+ client. -->
-    <script src="https://apis.google.com/js/client.js" async defer></script>
+    <script src="https://plus.google.com/js/client:platform.js" async defer></script>
 
   </head>
   <body>
