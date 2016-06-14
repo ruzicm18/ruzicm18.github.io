@@ -60,7 +60,7 @@
   
   var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
-	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
+	    		if (xhttp.readyState == 4 && xhttp.status == 200)
 	    		   alert(1);
 	      };
 	  xhttp.open("GET", "https://script.googleapis.com/v1/scripts/Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz:run", true);
