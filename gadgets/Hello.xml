@@ -13,100 +13,144 @@
 <![CDATA[
 <!DOCTYPE html>
 <html>
-
   <head>
-    <title>Demo: Getting an email address using the Google+ Sign-in button</title>
-    <!-- Include the API client and Google+ client. -->
-    <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
-    <script src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
+    <script type="text/javascript">
+      // Your Client ID can be retrieved from your project in the Google
+      // Developer Console, https://console.developers.google.com
+      var CLIENT_ID = '308244421658-ikumd9tme0md7hphhn3grlp6p1m02m1v.apps.googleusercontent.com	';
 
+      var SCOPES = ['https://www.googleapis.com/auth/drive'];
+
+      /**
+       * Check if current user has authorized this application.
+       */
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES.join(' '),
+            'immediate': true
+          }, handleAuthResult);
+      }
+
+      /**
+       * Handle response from authorization server.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+        var authorizeDiv = document.getElementById('authorize-div');
+        if (authResult && !authResult.error) {
+          // Hide auth UI, then load client library.
+          authorizeDiv.style.display = 'none';
+          callScriptFunction();
+        } else {
+          // Show auth UI, allowing the user to initiate authorization by
+          // clicking authorize button.
+          authorizeDiv.style.display = 'inline';
+        }
+      }
+
+      /**
+       * Initiate auth flow in response to user clicking authorize button.
+       *
+       * @param {Event} event Button click event.
+       */
+      function handleAuthClick(event) {
+        gapi.auth.authorize(
+          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+          handleAuthResult);
+        return false;
+      }
+
+      /**
+       * Calls an Apps Script function to list the folders in the user's
+       * root Drive folder.
+       */
+      function callScriptFunction() {
+        var scriptId = "Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz";
+
+        // Create an execution request object.
+        var request = {
+            'function': 'getFoldersUnderRoot'
+            };
+
+        // Make the API request.
+        var op = gapi.client.request({
+            'root': 'https://script.googleapis.com',
+            'path': 'v1/scripts/' + scriptId + ':run',
+            'method': 'POST',
+            'body': request
+        });
+
+        op.execute(function(resp) {
+          if (resp.error && resp.error.status) {
+            // The API encountered a problem before the script
+            // started executing.
+            appendPre('Error calling API:');
+            appendPre(JSON.stringify(resp, null, 2));
+          } else if (resp.error) {
+            // The API executed, but the script returned an error.
+
+            // Extract the first (and only) set of error details.
+            // The values of this object are the script's 'errorMessage' and
+            // 'errorType', and an array of stack trace elements.
+            var error = resp.error.details[0];
+            appendPre('Script error message: ' + error.errorMessage);
+
+            if (error.scriptStackTraceElements) {
+              // There may not be a stacktrace if the script didn't start
+              // executing.
+              appendPre('Script error stacktrace:');
+              for (var i = 0; i < error.scriptStackTraceElements.length; i++) {
+                var trace = error.scriptStackTraceElements[i];
+                appendPre('\t' + trace.function + ':' + trace.lineNumber);
+              }
+            }
+          } else {
+            // The structure of the result will depend upon what the Apps
+            // Script function returns. Here, the function returns an Apps
+            // Script Object with String keys and values, and so the result
+            // is treated as a JavaScript object (folderSet).
+            var folderSet = resp.response.result;
+            if (Object.keys(folderSet).length == 0) {
+                appendPre('No folders returned!');
+            } else {
+              appendPre('Folders under your root folder:');
+              Object.keys(folderSet).forEach(function(id){
+                appendPre('\t' + folderSet[id] + ' (' + id  + ')');
+              });
+            }
+          }
+        });
+      }
+
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById('output');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
   </head>
-
   <body>
-    <!-- Container with the Sign-In button. -->
-    <div id="gConnect" class="button">
-      <button class="g-signin"
-          data-scope="email"
-          data-clientid='308244421658-p0772f91bek31loqrv2961vkvhok7kg8.apps.googleusercontent.com'
-          data-callback="onSignInCallback"
-          data-theme="dark"
-          data-cookiepolicy="single_host_origin">
+    <div id="authorize-div" style="display: none">
+      <span>Authorize access to Google Apps Script Execution API</span>
+      <!--Button for the user to click to initiate auth sequence -->
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
       </button>
-      <!-- Textarea for outputting data -->
-      <div id="response" class="hide">
-        <textarea id="responseContainer" style="width:100%; height:150px"></textarea>
-      </div>
     </div>
- </body>
-
-  <script>
-  /**
-   * Handler for the signin callback triggered after the user selects an account.
-   */
-  function onSignInCallback(resp) {
-    gapi.client.load('plus', 'v1', apiClientLoaded);
-  }
-
-  /**
-   * Sets up an API call after the Google API client loads.
-   */
-  function apiClientLoaded() {
-    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-  }
-
-  /**
-   * Response callback for when the API client receives a response.
-   *
-   * @param resp The API response object with the user email and profile information.
-   */
-  function handleEmailResponse(resp) {
-    document.getElementById('responseContainer').value = 'ID: ' + resp.id;
-  }
-
-// ID of the script to call. Acquire this from the Apps Script editor,
-// under Publish > Deploy as API executable.
-var scriptId = "Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz";
-
-// Initialize parameters for function call.
-var sheetId = "14Qw5L4SlFajDkJluf9toBripduSBTJFnCRygIWBmzxA";
-
-// Create execution request.
-var request = {
-    'function': 'getSheetNames',
-    'parameters': [sheetId],
-    'devMode': true   // Optional.
-};
-
-// Make the request.
-var op = gapi.client.request({
-    'root': 'https://script.googleapis.com',
-    'path': 'v1/scripts/' + scriptId + ':run',
-    'method': 'POST',
-    'body': request
-});
-
-// Log the results of the request.
-op.execute(function(resp) {
-  if (resp.error && resp.error.status) {
-    // The API encountered a problem before the script started executing.
-    console.log('Error calling API: ' + JSON.stringify(resp, null, 2));
-  } else if (resp.error) {
-    // The API executed, but the script returned an error.
-    var error = resp.error.details[0];
-    console.log('Script error! Message: ' + error.errorMessage);
-  } else {
-    // Here, the function returns an array of strings.
-    var sheetNames = resp.response.result;
-    console.log('Sheet names in spreadsheet:');
-    sheetNames.forEach(function(name){
-      console.log(name);
-    });
-  }
-});
-
-
-  </script>
-
+    <pre id="output"></pre>
+  </body>
 </html>
 ]]>
 </Content>
