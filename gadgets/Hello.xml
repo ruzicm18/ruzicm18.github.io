@@ -66,6 +66,15 @@
 	  xhttp.open("GET", "https://script.google.com/a/macros/emancommerce.com/s/AKfycbwY4HV7zvCQ9zK5wwuwCCOL8DIhQXyRu_DaRpwxl177-4oZIis/exec", true);
 	  xhttp.send(request);
   
+  $.ajax({
+    type:     "GET",
+    url:      "https://script.google.com/a/macros/emancommerce.com/s/AKfycbwY4HV7zvCQ9zK5wwuwCCOL8DIhQXyRu_DaRpwxl177-4oZIis/exec", // <-- Here
+    dataType: "jsonp",
+    success: function(data){
+        console.log(data);
+    }
+});
+  
   </script>
 </html>
 ]]>
