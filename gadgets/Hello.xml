@@ -36,26 +36,7 @@
     </div>
  </body>
   <script>
-  /**
-   * Handler for the signin callback triggered after the user selects an account.
-   */
-  function onSignInCallback(resp) {
-    gapi.client.load('plus', 'v1', apiClientLoaded);
-  }
-  /**
-   * Sets up an API call after the Google API client loads.
-   */
-  function apiClientLoaded() {
-    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-  }
-  /**
-   * Response callback for when the API client receives a response.
-   *
-   * @param resp The API response object with the user email and profile information.
-   */
-  function handleEmailResponse(resp) {
-    document.getElementById('responseContainer').value = 'ID: ' + resp.id;
-  }
+
   
   // ID of the script to call. Acquire this from the Apps Script editor,
 // under Publish > Deploy as API executable.
