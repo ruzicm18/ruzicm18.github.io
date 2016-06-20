@@ -148,32 +148,43 @@
 	cursor: default;
 }
 
+.left {
+    float: left;
+    width: 50%;
+}
+
+.right {
+    margin-left: 50%;
+}
+
     </style>
   </head>
   <body>
     <div class="sidebar branding-below">
       <form>
-        
-        <div class="block" id="button-bar">
-          <button class="blue" id="create-issue">Create issue</button>
-        </div>
-                        
-        <div class="block project-names">
-          <label for="ID-for-select"><b>Project</b></label>
-          <select id="ID-for-select" onchange="projectChanged()"></select>
-        </div>
-
-        <div class="block project-milestones">
-          <label for="ID-for-milestones"><b>Milestones</b></label>
-          <select id="ID-for-milestones"></select>
-        </div>
-
-        <div class="block trackers">
-          <label for="ID-for-trackers"><b>Tracker</b></label>
-          <select id="ID-for-trackers"></select>
-        </div>
-        
-        <div class="block users">
+	
+	<div class="left">
+	  <div class="block project-names">
+        	<label for="ID-for-select"><b>Project</b></label>
+          	<select id="ID-for-select" onchange="projectChanged()"></select>
+          </div>
+          
+          <div class="block project-milestones">
+          	<label for="ID-for-milestones"><b>Milestones</b></label>
+          	<select id="ID-for-milestones"></select>
+          </div>
+          
+          <div class="block trackers">
+          	<label for="ID-for-trackers"><b>Tracker</b></label>
+          	<select id="ID-for-trackers"></select>
+          </div>
+          
+	</div>
+	
+	<div class="right">
+    		
+    		
+    		        <div class="block users">
           <label for="ID-for-users"><b>Assignee</b></label>
           <select id="ID-for-users"></select>
         </div>
@@ -197,7 +208,21 @@
           <label for="ID-for-IET"><b>IET</b></label>
           <input type="text" id="ID-for-IET">
         </div>
+    		
+    		
+	</div>
+                        
+
+
+
+
+
         
+
+                
+        <div class="block" id="button-bar">
+          <button class="blue" id="create-issue">Create issue</button>
+        </div>
       </form>
     </div>
 
