@@ -148,19 +148,9 @@
 	cursor: default;
 }
 
-.left {
-    float: left;
-    width: 30%;
-}
-
-.right {
-    margin-left: 60%;
-}
-
-.middle {
-    margin-left: 30%;
-    margin-right: 60%;
-}
+.left{ float: left; width: 33%; }
+.right{ float: right; width: 33%; }
+.center{ display: inline-block; width: 33%; }
 
     </style>
   </head>
@@ -187,7 +177,7 @@
           
 	</div>
 	
-	<div class="middle">
+	<div class="center">
 	          <div class="block trackers">
           	<label for="ID-for-trackers"><b>Tracker</b></label>
           	<select id="ID-for-trackers"></select>
