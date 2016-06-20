@@ -179,6 +179,10 @@
           	<select id="ID-for-trackers"></select>
           </div>
           
+                  <div class="block" id="button-bar">
+          <button class="blue" id="create-issue">Create issue</button>
+        </div>
+          
 	</div>
 	
 	<div class="right">
@@ -211,18 +215,7 @@
     		
     		
 	</div>
-                        
 
-
-
-
-
-        
-
-                
-        <div class="block" id="button-bar">
-          <button class="blue" id="create-issue">Create issue</button>
-        </div>
       </form>
     </div>
 
