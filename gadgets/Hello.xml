@@ -154,12 +154,12 @@
 }
 
 .right {
-    margin-left: 30%;
-    margin-right: 60%;
+    margin-left: 60%;
 }
 
-.midlle {
-    margin-left: 60%;
+.middle {
+    margin-left: 30%;
+    margin-right: 60%;
 }
 
     </style>
