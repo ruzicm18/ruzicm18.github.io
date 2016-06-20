@@ -153,12 +153,8 @@
   <body>
     <div class="sidebar branding-below">
       <form>
-        <div id="spinner">
-          <center> <p> Please Wait</p> <img src="https://media.giphy.com/media/m9is3wei8GtcQ/giphy.gif" width="120" height="90" align="middle"/> </center>
-        </div>
         
         <div class="block" id="button-bar">
-          <button class="red" id="insert-text">Insert text</button>
           <button class="blue" id="create-issue">Create issue</button>
         </div>
                         
@@ -177,19 +173,9 @@
           <select id="ID-for-trackers"></select>
         </div>
         
-        <div class="block issue-title">
-          <label for="issue-title"><b>Title</b></label>
-          <textarea class="width-100" id="issue-title" rows="3"></textarea>
-        </div>
-        
         <div class="block users">
           <label for="ID-for-users"><b>Assignee</b></label>
           <select id="ID-for-users"></select>
-        </div>
-            
-        <div class="block issue-description">
-          <label for="issue-description"><b>Description</b></label>
-          <textarea class="width-100" id="issue-description" rows="10"></textarea>
         </div>
         
         <div class="block priority">
