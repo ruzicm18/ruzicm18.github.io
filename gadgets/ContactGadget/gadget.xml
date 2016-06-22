@@ -14,7 +14,7 @@
 	<STYLE TYPE="text/css">
 	TD{
 		font-family: Arial; 
-		font-size: 0.6em;
+		font-size: 0.7em;
 		vertical-align: top;
 	}
 	TBODY{    
@@ -23,8 +23,8 @@
     		left: 0px;
     	}
     	H3{
-    		top:12px;
-    		left12px
+    		top:	12px;
+    		left:	12px;
     	}
     	
     	
