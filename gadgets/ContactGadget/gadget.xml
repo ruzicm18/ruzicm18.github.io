@@ -79,7 +79,7 @@
 				    right = document.createElement('div');
 				
 					left.className = "left";
-					middle.className = "middle";
+					middle.className = "center";
 					right.className = "right";
 					
 					var leftTable = document.createElement('table');
