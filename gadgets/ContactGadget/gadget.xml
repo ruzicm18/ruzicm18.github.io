@@ -101,7 +101,7 @@
 				document.body.appendChild(middle);
 				document.body.appendChild(right);
 	               
-	               		//gadgets.window.adjustHeight();
+	               		gadgets.window.adjustHeight();
 			}
 		}
   	};
