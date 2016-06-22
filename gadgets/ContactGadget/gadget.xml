@@ -75,8 +75,8 @@
 				var c, r, t, left, middle, right;
 					//t.style.fontSize = "x-small";
 				    left = document.createElement('div');
-				    middle = createElement('div');
-				    right = createElement('div');
+				    middle = document.createElement('div');
+				    right = document.createElement('div');
 				
 					left.className = "left";
 					middle.className = "middle";
