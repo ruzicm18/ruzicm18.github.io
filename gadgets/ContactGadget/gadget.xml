@@ -14,17 +14,17 @@
 	<STYLE TYPE="text/css">
 	TD{
 		font-family: Arial; 
-		font-size: 0.7em;
+		font-size: 0.8em;
 		vertical-align: top;
 	}
 	TBODY{    
 		position: relative;
     		top: 0px;
-    		left: 12px;
+    		left: 1.2em;
     	}
     	H3{
-    		top:	12px;
-    		left:	12px;
+    		top:	1em;
+    		left:	1em;
     	}
     	
     	
