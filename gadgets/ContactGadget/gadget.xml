@@ -16,12 +16,8 @@
 		font-family: Arial; 
 		font-size: 0.8em;
 		vertical-align: top;
+		margin-left: 2em;
 	}
-	td{    
-		position: relative;
-    		top: 0px;
-    		margin-left: 10em;
-    	}
     	H3{
     		margin-top:	0.8em;
     		margin-left:	0.8em;
