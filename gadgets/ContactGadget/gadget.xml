@@ -24,6 +24,7 @@
 	--->
 	</STYLE>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
 	
 	var REDMINE_API_KEY = "acfc408436a5d9a15a028b986e91a5cd8ed29963";
@@ -52,22 +53,26 @@
 								contact_name.appendChild(text);
 				table_contact.appendChild(contact_name);
 				
-				var c, r, t, left, right;
+				var c, r, t, left, middle, right;
 				    t = document.createElement('table');
 					//t.style.fontSize = "x-small";
 				    r = t.insertRow(0); 
 				    left = r.insertCell(0);
-				    right = r.insertCell(1);
+					middle = r.insertCell(1);
+				    right = r.insertCell(2);
 					
 					table_contact.appendChild(t);
 					
 					var leftTable = document.createElement('table');
+					var middleTable = document.createElement('table');
 					var rightTable = document.createElement('table');
 					
 					left.appendChild(leftTable);
+					middle.appendChild(leftTable);
 					right.appendChild(rightTable);
 					
 					fillLeftTable (leftTable, contact);
+					fillRightTable (middleTable, contact);
 					fillRightTable (rightTable, contact);
 									
 					//table_contact.innerText = table_contact.innerText.replace('undefined', '');
@@ -141,8 +146,6 @@
 			}
 			right.innerHTML = text;
 		}
-		
-		
 	};
 	
 	function fillRightTable (table, contact) {
@@ -156,6 +159,10 @@
 				right.innerHTML = contact.phones[j].phone;
 			}
 		}
+	};
+	
+	function fillMiddleTable (table, contact) {
+		var i = 0;
 		if ( contact.emails != null && contact.emails.length > 0 ) {
 			for (var j = 0; j < contact.emails.length; j++ ) {
 			    var r = table.insertRow(i++ ); 
