@@ -115,7 +115,7 @@
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Company		".bold();
+			left.innerHTML = "Company	".bold();
 			right.innerHTML = contact.company;
 		}
 		if ( contact.job_title != null ) {
@@ -123,7 +123,7 @@
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Job title		".bold();
+			left.innerHTML = "Job title	".bold();
 			right.innerHTML = contact.job_title;
 		}
 		if ( contact.birth_day != null ) {
@@ -131,7 +131,7 @@
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Birthday		".bold();
+			left.innerHTML = "Birthday	".bold();
 			right.innerHTML = contact.birth_day;
 		}
 		if ( contact.skype != null ) {
@@ -139,7 +139,7 @@
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Skype   		".bold();
+			left.innerHTML = "Skyp	".bold();
 			right.innerHTML = contact.skype;
 		}
 		if ( contact.assignee != null ) {
@@ -147,14 +147,14 @@
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Assignee		".bold();
+			left.innerHTML = "Assignee	".bold();
 			right.innerHTML = contact.assignee;
 		}
 		if ( contact.tags != null && contact.tags.length > 0 ) {
 		    var r = table.insertRow(i++); 
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
-			left.innerHTML = "Tags		".bold();
+			left.innerHTML = "Tags	".bold();
 			var text = "";
 			for (var j = 0; j < contact.tags.length; j++ ) {
 				if (j == 0) {
@@ -174,7 +174,7 @@
 			    var r = table.insertRow(i++ ); 
 			    var left = r.insertCell(0);
 			    var right = r.insertCell(1);
-				left.innerHTML = contact.phones[j].category.bold() + "		";
+				left.innerHTML = contact.phones[j].category.bold() + "	";
 				right.innerHTML = contact.phones[j].phone;
 			}
 		}
@@ -187,7 +187,7 @@
 			    var r = table.insertRow(i++ ); 
 			    var left = r.insertCell(0);
 			    var right = r.insertCell(1);
-				left.innerHTML = contact.emails[j].category.bold() + "		";
+				left.innerHTML = contact.emails[j].category.bold() + "	";
 				right.innerHTML = contact.emails[j].email;
 			}
 		}
