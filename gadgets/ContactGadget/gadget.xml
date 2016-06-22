@@ -25,19 +25,19 @@
     	
     	.left{ 
     		float: left; 
-    		width: 25%;
+    		width: 29%;
     		padding-right: 1em;
     		padding-left: 1em;
     	}
     	.center{ 
 		display: inline-block; 
-		width: 25%;
+		width: 29%;
 		padding-right: 1em;
     		padding-left: 1em;
 	}
 	.right{ 
 		float: right; 
-		width: 25%;
+		width: 29%;
 		padding-right: 1em;
     		padding-left: 1em;
 	}
