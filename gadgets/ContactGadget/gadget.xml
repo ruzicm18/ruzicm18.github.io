@@ -20,7 +20,7 @@
 	TBODY{    
 		position: relative;
     		top: 0px;
-    		left: 0px;
+    		left: 12px;
     	}
     	H3{
     		top:	12px;
