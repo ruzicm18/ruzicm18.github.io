@@ -20,11 +20,11 @@
 	TBODY{    
 		position: relative;
     		top: 0px;
-    		left: 1.2em;
+    		margin-left: 0.8em;
     	}
     	H3{
-    		top:	1em;
-    		left:	1em;
+    		margin-top:	0.8em;
+    		margin-left:	0.8em;
     	}
     	
     	
