@@ -25,19 +25,19 @@
     	
     	.left{ 
     		float: left; 
-    		width: 33%;
+    		width: 25%;
     		padding-right: 1em;
     		padding-left: 1em;
     	}
     	.center{ 
 		display: inline-block; 
-		width: 30%;
+		width: 25%;
 		padding-right: 1em;
     		padding-left: 1em;
 	}
 	.right{ 
 		float: right; 
-		width: 33%;
+		width: 25%;
 		padding-right: 1em;
     		padding-left: 1em;
 	}
@@ -94,7 +94,7 @@
 				
 				document.body.appendChild(contact_name);
 				document.body.appendChild(left);
-				//document.body.appendChild(middle);
+				document.body.appendChild(middle);
 				document.body.appendChild(right);
 			}
 		}
