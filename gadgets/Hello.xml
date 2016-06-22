@@ -17,9 +17,9 @@
     <title>Demo: Getting an email address using the Google+ Sign-in button</title>
     <!-- Include the API client and Google+ client. -->
     <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
+    <script src= "https://script.google.com/a/macros/emancommerce.com/s/AKfycbyNcz6UFECRVajFkp7FUGdazs4s--tYm6rXdShHmc4/dev"></script>
   </head>
   <body>
-    <iframe src="https://script.google.com/a/macros/emancommerce.com/s/AKfycbwyc0zsW68hwRFDXUKiN69fJLKzWn0U6EUwV0VRdavTKKh1-aIP/exec"></iframe>
     <!-- Container with the Sign-In button. -->
     <div id="gConnect" class="button">
       <button class="g-signin"
