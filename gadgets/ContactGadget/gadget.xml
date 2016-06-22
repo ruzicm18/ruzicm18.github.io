@@ -42,7 +42,10 @@
 		padding-right: 1em;
     		padding-left: 1em;
 	}
-
+	html{
+    		width:100%;
+    		height:100%;
+	}
     	
 	</STYLE>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -97,6 +100,8 @@
 				document.body.appendChild(left);
 				document.body.appendChild(middle);
 				document.body.appendChild(right);
+	               
+	               		//gadgets.window.adjustHeight();
 			}
 		}
   	};
@@ -192,11 +197,6 @@
 			}
 		}
 	};
-	
-	
-	function onPageLoaded() {
-	               gadgets.window.adjustHeight();
-	                }	
 					
 	
 </script>
