@@ -23,6 +23,9 @@
     		margin-left:	0.8em;
     	}
     	
+    	.left{ float: left; width: 33%; }
+	.right{ float: right; width: 33%; }
+	.center{ display: inline-block; width: 33%; }
     	
 	</STYLE>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -69,9 +72,9 @@
 					
 					table_contact.appendChild(t);
 					
-					var leftTable = document.createElement('table');
-					var middleTable = document.createElement('table');
-					var rightTable = document.createElement('table');
+					var leftTable = document.createElement('div').className = "left";
+					var middleTable = document.createElement('div').className = "middle";
+					var rightTable = document.createElement('div').className = "right";
 					
 					left.appendChild(leftTable);
 					middle.appendChild(middleTable);
