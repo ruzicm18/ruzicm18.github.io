@@ -73,23 +73,21 @@
 				table_contact.appendChild(contact_name);
 				
 				var c, r, t, left, middle, right;
-				    t = document.createElement('table');
 					//t.style.fontSize = "x-small";
-				    r = t.insertRow(0); 
-				    left = r.insertCell(0);
-				    middle = r.insertCell(1);
-				    right = r.insertCell(2);
+				    left = document.createElement('div');
+				    middle = createElement('div');
+				    right = createElement('div');
 				
-					left.className = "myTable";
-					middle.className = "myTable";
-					right.className = "myTable";
+					left.className = "left";
+					middle.className = "middle";
+					right.className = "right";
 					
 					
 					table_contact.appendChild(t);
 					
-					var leftTable = document.createElement('div').className = "left";
-					var middleTable = document.createElement('div').className = "middle";
-					var rightTable = document.createElement('div').className = "right";
+					var leftTable = document.createElement('table');
+					var middleTable = document.createElement('table');
+					var rightTable = document.createElement('table');
 					
 					left.appendChild(leftTable);
 					middle.appendChild(middleTable);
