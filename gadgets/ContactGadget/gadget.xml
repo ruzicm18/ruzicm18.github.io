@@ -39,7 +39,7 @@
 			var object = JSON.parse(xhttp.responseText);					
 			
 			if ( object.total_count == 0 ) {
-				var h = document.createElement("H2");                // Create a <h1> element
+				var h = document.createElement("H3");                // Create a <h1> element
 				var t = document.createTextNode("Pro odesílatele se v Redmine nenachází žadný kontakt");     // Create a text node
 				h.appendChild(t);
 				document.body.appendChild(h);
