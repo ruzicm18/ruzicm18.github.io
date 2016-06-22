@@ -94,7 +94,7 @@
 				
 				document.body.appendChild(contact_name);
 				document.body.appendChild(left);
-				document.body.appendChild(middle);
+				//document.body.appendChild(middle);
 				document.body.appendChild(right);
 			}
 		}
