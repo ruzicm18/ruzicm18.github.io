@@ -131,7 +131,7 @@
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
 			
-			left.innerHTML = "Birthday		".bold();
+			left.innerHTML = "Birthday     		".bold();
 			right.innerHTML = contact.birth_day;
 		}
 		if ( contact.skype != null ) {
