@@ -82,9 +82,6 @@
 					middle.className = "middle";
 					right.className = "right";
 					
-					
-					table_contact.appendChild(t);
-					
 					var leftTable = document.createElement('table');
 					var middleTable = document.createElement('table');
 					var rightTable = document.createElement('table');
@@ -100,6 +97,9 @@
 					//table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
 				document.body.appendChild(table_contact);
+				document.body.appendChild(left);
+				document.body.appendChild(middle);
+				document.body.appendChild(right);
 			}
 		}
   	};
