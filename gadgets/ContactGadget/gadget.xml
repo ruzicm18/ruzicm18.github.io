@@ -16,6 +16,7 @@
 	TD{
 		font-family: Arial; 
 		font-size: 0.6em;
+		vertical-align: top;
 	}
 	TBODY{    
 		position: relative;
