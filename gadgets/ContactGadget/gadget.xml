@@ -20,7 +20,7 @@
 	.myTable{    
 		position: relative;
     		top: 0px;
-    		margin-left: 0.8em;
+    		margin-left: 10em;
     	}
     	H3{
     		margin-top:	0.8em;
