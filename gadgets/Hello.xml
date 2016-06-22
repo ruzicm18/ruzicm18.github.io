@@ -14,474 +14,84 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base target="_top">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-    
-    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
-    <!-- The CSS package above applies Google styling to buttons and other elements. -->
-
-    <style>
-    .branding-below {
-      bottom: 56px;
-      top: 0;
-    }
-
-    .branding-text {
-      left: 7px;
-      position: relative;
-      top: 3px;
-    }
-
-    .col-contain {
-      overflow: hidden;
-    }
-
-    .col-one {
-      float: left;
-      width: 50%;
-    }
-
-    .logo {
-      vertical-align: middle;
-    }
-
-    .radio-spacer {
-      height: 20px;
-    }
-
-    .width-100 {
-      width: 100%;
-    }
-
-.ui-datepicker {
-	background-color: #fff;
-	border: 1px solid #66AFE9;
-	border-radius: 4px;
-	box-shadow: 0 0 8px rgba(102,175,233,.6);
-	display: none;
-	margin-top: 4px;
-	padding: 10px;
-	width: 240px;
-}
-.ui-datepicker a,
-.ui-datepicker a:hover {
-	text-decoration: none;
-}
-.ui-datepicker a:hover,
-.ui-datepicker td:hover a {
-	color: #2A6496;
-	-webkit-transition: color 0.1s ease-in-out;
-	   -moz-transition: color 0.1s ease-in-out;
-	     -o-transition: color 0.1s ease-in-out;
-	        transition: color 0.1s ease-in-out;
-}
-.ui-datepicker .ui-datepicker-header {
-	margin-bottom: 4px;
-	text-align: center;
-}
-.ui-datepicker .ui-datepicker-title {
-	font-weight: 700;
-}
-.ui-datepicker .ui-datepicker-prev,
-.ui-datepicker .ui-datepicker-next {
-	cursor: default;
-	font-family: 'Glyphicons Halflings';
-	-webkit-font-smoothing: antialiased;
-	font-style: normal;
-	font-weight: normal;
-	height: 20px;
-	line-height: 1;
-	margin-top: 2px;
-	width: 30px;
-}
-.ui-datepicker .ui-datepicker-prev {
-	float: left;
-	text-align: left;
-}
-.ui-datepicker .ui-datepicker-next {
-	float: right;
-	text-align: right;
-}
-.ui-datepicker .ui-datepicker-prev:before {
-	content: "\e079";
-}
-.ui-datepicker .ui-datepicker-next:before {
-	content: "\e080";
-}
-.ui-datepicker .ui-icon {
-	display: none;
-}
-.ui-datepicker .ui-datepicker-calendar {
-  table-layout: fixed;
-	width: 100%;
-}
-.ui-datepicker .ui-datepicker-calendar th,
-.ui-datepicker .ui-datepicker-calendar td {
-	text-align: center;
-	padding: 4px 0;
-}
-.ui-datepicker .ui-datepicker-calendar td {
-	border-radius: 4px;
-	-webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-	   -moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-	     -o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-	        transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-}
-.ui-datepicker .ui-datepicker-calendar td:hover {
-	background-color: #eee;
-	cursor: pointer;
-}
-.ui-datepicker .ui-datepicker-calendar td a {
-	text-decoration: none;
-}
-.ui-datepicker .ui-datepicker-current-day {
-	background-color: #4289cc;
-}
-.ui-datepicker .ui-datepicker-current-day a {
-	color: #fff
-}
-.ui-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable:hover {
-	background-color: #fff;
-	cursor: default;
-}
-
-.left{ float: left; width: 33%; }
-.right{ float: right; width: 33%; }
-.center{ display: inline-block; width: 33%; }
-
-    </style>
+    <title>Demo: Getting an email address using the Google+ Sign-in button</title>
+    <!-- Include the API client and Google+ client. -->
+    <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
   </head>
   <body>
-    <div class="sidebar branding-below">
-      <form>
-	
-	<div class="left">
-	  <div class="block project-names">
-        	<label for="ID-for-select"><b>Project</b></label>
-          	<select id="ID-for-select" onchange="projectChanged()"></select>
-          </div>
-          
-          <div class="block project-milestones">
-          	<label for="ID-for-milestones"><b>Milestones</b></label>
-          	<select id="ID-for-milestones"></select>
-          </div>
-          
-
-          
-                  <div class="block" id="button-bar">
-          <button class="blue" id="create-issue">Create issue</button>
-        </div>
-          
-	</div>
-	
-	<div class="center">
-	          <div class="block trackers">
-          	<label for="ID-for-trackers"><b>Tracker</b></label>
-          	<select id="ID-for-trackers"></select>
-          </div>
-          
-              		        <div class="block users">
-          <label for="ID-for-users"><b>Assignee</b></label>
-          <select id="ID-for-users"></select>
-        </div>
-        
-        <div class="block priority">
-          <label for="ID-for-priorities"><b>Priority</b></label>
-          <select id="ID-for-priorities"></select>
-        </div>
-          
-	</div>
-	
-	
-	<div class="right">
-    		
-    		
-
-        
-        <div class="block star-date">
-          <label for="ID-for-startdatepicker"><b>Start date</b></label>
-          <input type="text" id="ID-for-startdatepicker" class="datepicker">
-        </div>
-        
-        <div class="block due-date">
-          <label for="ID-for-duedatepicker"><b>Due date</b></label>
-          <input type="text" id="ID-for-duedatepicker" class="datepicker">
-        </div>
-        
-        <div class="block IET">
-          <label for="ID-for-IET"><b>IET</b></label>
-          <input type="text" id="ID-for-IET">
-        </div>
-    		
-    		
-	</div>
-
-      </form>
+    <!-- Container with the Sign-In button. -->
+    <div id="gConnect" class="button">
+      <button class="g-signin"
+          data-scope="email"
+          data-clientid='308244421658-p0772f91bek31loqrv2961vkvhok7kg8.apps.googleusercontent.com'
+          data-callback="onSignInCallback"
+          data-theme="dark"
+          data-cookiepolicy="single_host_origin">
+      </button>
+      <!-- Textarea for outputting data -->
+      <div id="response" class="hide">
+        <textarea id="responseContainer" style="width:100%; height:150px"></textarea>
+      </div>
     </div>
-
-    <script>
-    var loaders = 4;
-    $("#spinner").show();
-    
-    $(document).ready(function() { 
-       $("select").select2({width: "70%"});
+ </body>
+  <script>
+  /**
+   * Handler for the signin callback triggered after the user selects an account.
+   */
+  function onSignInCallback(resp) {
+    gapi.client.load('plus', 'v1', apiClientLoaded);
+  }
+  /**
+   * Sets up an API call after the Google API client loads.
+   */
+  function apiClientLoaded() {
+    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+  }
+  /**
+   * Response callback for when the API client receives a response.
+   *
+   * @param resp The API response object with the user email and profile information.
+   */
+  function handleEmailResponse(resp) {
+    document.getElementById('responseContainer').value = 'ID: ' + resp.id;
+  }
+// ID of the script to call. Acquire this from the Apps Script editor,
+// under Publish > Deploy as API executable.
+var scriptId = "Mrx-O5g7Eu2CwyGo5rnPutS51ztMsFRcz";
+// Initialize parameters for function call.
+var sheetId = "14Qw5L4SlFajDkJluf9toBripduSBTJFnCRygIWBmzxA";
+// Create execution request.
+var request = {
+    'function': 'getSheetNames',
+    'parameters': [sheetId],
+    'devMode': true   // Optional.
+};
+// Make the request.
+var op = gapi.client.request({
+    'root': 'https://script.googleapis.com',
+    'path': 'v1/scripts/' + scriptId + ':run',
+    'method': 'POST',
+    'body': request
+});
+// Log the results of the request.
+op.execute(function(resp) {
+  if (resp.error && resp.error.status) {
+    // The API encountered a problem before the script started executing.
+    console.log('Error calling API: ' + JSON.stringify(resp, null, 2));
+  } else if (resp.error) {
+    // The API executed, but the script returned an error.
+    var error = resp.error.details[0];
+    console.log('Script error! Message: ' + error.errorMessage);
+  } else {
+    // Here, the function returns an array of strings.
+    var sheetNames = resp.response.result;
+    console.log('Sheet names in spreadsheet:');
+    sheetNames.forEach(function(name){
+      console.log(name);
     });
-    
-    google.script.run.findAndReplaceText();
-    
-    google.script.run
-            .withSuccessHandler(
-              function(projects){                
-                  var combo = $("#ID-for-select");
-                  
-                  for (var i = 0; i < projects.length; i++) {
-                     $("<option />", {value: projects[i][0], text: projects[i][1]}).appendTo(combo);
-                  }
-                  removeSpinnerIfDone();
-                  projectChanged();
-            })
-            .withFailureHandler(
-              function(msg, element) {              
-                showError(msg, $('#button-bar'));
-                //element.disabled = false;
-                removeSpinnerIfDone();
-              })
-            .getProjects();
-
-       function projectChanged() {
-          loaders = 3;
-          $("#spinner").show();
-
-          var projectID = $( "#ID-for-select option:selected" ).val();
-
-          
-          google.script.run
-            .withSuccessHandler(
-              function(users){                
-                  var combo = $("#ID-for-users").empty();
-                  
-                  for (var i = 0; i < users.length; i++) {
-                     $("<option />", {value: users[i][0], text: users[i][1]}).appendTo(combo);
-                  }
-                  removeSpinnerIfDone();
-            })
-            .withFailureHandler(
-              function(msg, element) {              
-                showError(msg, $('#button-bar'));
-                element.disabled = false;
-                removeSpinnerIfDone();
-              })
-            .getMembersOfGroup(projectID);
-
-        google.script.run
-            .withSuccessHandler(
-              function(trackers){                
-                  var combo = $("#ID-for-trackers").empty();
-                  
-                  for (var i = 0; i < trackers.length; i++) {
-                     $("<option />", {value: trackers[i][0], text: trackers[i][1]}).appendTo(combo);
-                  }
-                  removeSpinnerIfDone();
-            })
-            .withFailureHandler(
-              function(msg, element) {              
-                showError(msg, $('#button-bar'));
-                element.disabled = false;
-                removeSpinnerIfDone();
-              })
-            .getTrackers(projectID);
-        
-        google.script.run
-            .withSuccessHandler(
-              function(priorities){                
-                  var combo = $("#ID-for-priorities").empty();
-                  var valuePriority = priorities[0][0];
-                  
-                  for (var i = 0; i < priorities.length; i++) {
-                     $("<option />", {value: priorities[i][0], text: priorities[i][1]}).appendTo(combo);
-                     
-                     if(priorities[i][2] == true) {
-                        valuePriority = priorities[i][0];
-                     }
-                  }
-                  combo.val(valuePriority);
-                  removeSpinnerIfDone();
-            })
-            .withFailureHandler(
-              function(msg, element) {              
-                showError(msg, $('#button-bar'));
-                removeSpinnerIfDone();
-              })
-            .getPriorities();
-            
-            
-            
-        google.script.run
-            .withSuccessHandler(
-              function(milestones){                
-                  var combo = $("#ID-for-milestones").empty();
-                  
-                  for (var i = 0; i < milestones.length; i++) {
-                     $("<option />", {value: milestones[i][0], text: milestones[i][1]}).appendTo(combo);
-                  }
-                  removeSpinnerIfDone();
-            })
-            .withFailureHandler(
-              function(msg, element) {              
-                showError(msg, $('#button-bar'));
-                removeSpinnerIfDone();
-              })
-            .getMilestones(projectID);
-       
-       }
-
-    
-       $(function() {
-          $("#ID-for-startdatepicker").datepicker({dateFormat: 'yy-mm-dd'}).datepicker("setDate", new Date());
-          $("#ID-for-duedatepicker").datepicker({dateFormat: 'yy-mm-dd'}).datepicker("setDate", "+7");
-       }); 
-          
-      function removeSpinnerIfDone() {
-        if (loaders <= 1) {
-          loaders = 0;
-          $("#spinner").hide();
-        } else {
-          loaders--;
-        }
-      }
-      
-      function clearForm() {
-        $("#issue-title").val("");
-        $('#issue-description').val("");
-        $('#ID-for-IET').val("");
-        
-        $("#ID-for-startdatepicker").datepicker({dateFormat: 'yy-mm-dd'}).datepicker("setDate", new Date());
-        $("#ID-for-duedatepicker").datepicker({dateFormat: 'yy-mm-dd'}).datepicker("setDate", "+7");
-     
-      }
-      
-      $( "#insert-text" ).bind( "click", function( event ) {
-      event.preventDefault();
-              google.script.run
-            .withSuccessHandler(
-              function(translatedText) {              
-                $('#issue-description').val(translatedText);
-                  var title = translatedText.toString().substring(0, 99);
-                
-                $('#issue-title').val(title);
-                //element.disabled = false;
-              })
-            .withFailureHandler(
-              function(msg, element) {
-                showError(msg, $('#button-bar'));
-                element.disabled = false;
-              })
-            .withUserObject(this)
-            .runTranslation();
-      });
-      
-      $( "#create-issue" ).bind( "click", function( event ) {
-         event.preventDefault();
-         
-         if ($('#issue-title').val() == "" || $('#issue-description').val() == "" ) {
-            showError("Title and Description must not be empty!", $('#button-bar'));
-            return;
-         }
-         
-         loaders++;
-         $("#spinner").show();
-         var data = constructJSON();
-         google.script.run
-            .withSuccessHandler(     
-              function(issueID) {
-              $('.error').remove();
-              removeSpinnerIfDone();
-              clearForm();
-              })
-            .withFailureHandler(
-              function(msg, element) {
-                showError(msg, $('#button-bar'));
-                element.disabled = false;
-                removeSpinnerIfDone();
-              })
-            .withUserObject(this)
-            .createIssue(data);
-      });
-      
-
-      /**
-       * Runs a server-side function to translate the user-selected text and update
-       * the sidebar UI with the resulting translation.
-       */
-
-        $('.error').remove();
-            
-      
-      function constructJSON() {
-
-           var myJSON = {
-           "project_id":$( "#ID-for-select option:selected" ).val(),
-           "issue":{
-                  "subject": $('#issue-title').val(),
-                  "description": $('#issue-description').val(),
-                  "tracker_id": $( "#ID-for-trackers option:selected" ).val(),
-                  "assigned_to_id": $("#ID-for-users option:selected").val(),
-                  "priority_id": $("#ID-for-priorities option:selected").val(),
-                  "start_date": $("#ID-for-startdatepicker").val(),
-                  "due_date": $("#ID-for-duedatepicker").val(),
-                  "estimated_hours": $("#ID-for-IET").val(),
-                  "fixed_version_id": $("#ID-for-milestones").val()
-             }
-           }
-           return JSON.stringify(myJSON);
-           //return myJSON;
-      }
-      
-
-      /**
-       * Runs a server-side function to insert the translated text into the document
-       * at the user's cursor or selection.
-       */
-      function insertText(code) {
-        this.disabled = true;
-        $('#error').remove();
-        google.script.run
-            .withSuccessHandler(
-              function(returnSuccess, element) {
-                element.disabled = false;
-              })
-            .withFailureHandler(
-              function(msg, element) {
-                showError(msg, $('#button-bar'));
-                element.disabled = false;
-              })
-            .withUserObject(this)
-            .insertText(code);
-      } 
-   
-
-      /**
-       * Inserts a div that contains an error message after a given element.
-       *
-       * @param msg The error message to display.
-       * @param element The element after which to display the error.
-       */
-      function showError(msg, element) {
-      $("#error").remove();
-      if(msg.code == 403) 
-         var div = $('<div id="error" class="error">' + "nemas pristup do projektu" + '</div>');
-        var div = $('<div id="error" class="error">' + msg + '</div>');
-        $(element).after(div);
-      }
-      
-      //runTranslation();
-      
-    </script>
-  </body>
-</html>
+  }
+});
+  </script>
 </html>
 ]]>
 </Content>
