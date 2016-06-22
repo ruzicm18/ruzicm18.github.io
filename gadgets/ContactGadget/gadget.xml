@@ -3,7 +3,7 @@
 -->
 
 <Module>
-<ModulePrefs title="Contact detail" description="Shows detail information of email sender" height="50" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
+<ModulePrefs title="Contact detail" description="Shows detail information of email sender" height="60" author="Martin Růžička" author_email="martin.ruzicka@eman.cz" author_location="Prague, Czech Republic">
 <Require feature="dynamic-height"/>
 <Require feature="google.contentmatch">
 <Param name="extractors">google.com:SenderEmailExtractor</Param>
