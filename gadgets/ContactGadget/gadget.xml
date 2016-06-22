@@ -20,8 +20,8 @@
 		height: 2em;
 	}
     	H3{
-    		margin-top:	0.8em;
-    		margin-left:	0.8em;
+    		padding-top:	0.8em;
+    		padding-left:	0.8em;
     	}
     	
     	.left{ 
