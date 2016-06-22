@@ -17,7 +17,7 @@
 		font-size: 0.8em;
 		vertical-align: top;
 	}
-	TBODY{    
+	.myTable{    
 		position: relative;
     		top: 0px;
     		margin-left: 0.8em;
@@ -63,8 +63,13 @@
 					//t.style.fontSize = "x-small";
 				    r = t.insertRow(0); 
 				    left = r.insertCell(0);
-					middle = r.insertCell(1);
+				    middle = r.insertCell(1);
 				    right = r.insertCell(2);
+				
+					left.className = "myTable";
+					middle.className = "myTable";
+					right.className = "myTable";
+					
 					
 					table_contact.appendChild(t);
 					
