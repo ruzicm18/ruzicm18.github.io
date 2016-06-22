@@ -134,7 +134,7 @@
 		    var r = table.insertRow(i++); 
 		    var left = r.insertCell(0);
 		    var right = r.insertCell(1);
-			left.innerHTML = "Tags	";
+			left.innerHTML = "Tags	".bold();
 			var text = "";
 			for (var j = 0; j < contact.tags.length; j++ ) {
 				if (j == 0) {
