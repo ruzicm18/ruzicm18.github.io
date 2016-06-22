@@ -29,18 +29,19 @@
     		padding-right: 1em;
     		padding-left: 1em;
     	}
+    	.center{ 
+		display: inline-block; 
+		width: 33%;
+		padding-right: 1em;
+    		padding-left: 1em;
+	}
 	.right{ 
 		float: right; 
 		width: 33%;
 		padding-right: 1em;
     		padding-left: 1em;
 	}
-	.center{ 
-		display: inline-block; 
-		width: 33%;
-		padding-right: 1em;
-    		padding-left: 1em;
-	}
+
     	
 	</STYLE>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -64,14 +65,9 @@
 				document.body.appendChild(h);
 			} else {
 				var contact = object.contacts[0];
-			
-				var table_contact = document.createElement("TD");
-				
 				var contact_name  = document.createElement("H3");
 				var text = document.createTextNode( getValue( contact.prefix ) + " " + getValue( contact.first_name ) + " " + getValue( contact.middle_name ) + " " + getValue( contact.family_name ) + " " +getValue( contact.suffix ) );
 								contact_name.appendChild(text);
-				table_contact.appendChild(contact_name);
-				
 				var c, r, t, left, middle, right;
 					//t.style.fontSize = "x-small";
 				    left = document.createElement('div');
@@ -96,7 +92,7 @@
 									
 					//table_contact.innerText = table_contact.innerText.replace('undefined', '');
 				
-				document.body.appendChild(table_contact);
+				document.body.appendChild(contact_name);
 				document.body.appendChild(left);
 				document.body.appendChild(middle);
 				document.body.appendChild(right);
