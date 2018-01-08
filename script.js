@@ -116,52 +116,13 @@ var key = {
     right: 39
 };
 
-// var questions = [
-//     "1. Máte chuť na plnější pivo?",
-//     "2. Chcete vyzkoušet ostřejší pivo?",
-//     "3. Plánujete při pití jíst keksy?",
-//     "4. Preferejute hořké pivo?",
-//     "5. Je libo silnější kousek?",
-//     "6. Máte chuť na ovoce?",
-//     "7. Preferujete chmelové pivo?",
-//     "8. Preferujete větší podíl pšenice?",
-//     "9. Dal/a byste si spíše sladké pivo?",
-//     "10. Co takhle šťavnaté?",
-//     "11. Máte náladu na něco netradičního?",
-//     "12. Rádi byste osvěžující nápoj?"
-// ];
-//
-// var conclusions = [
-//     "1. Pilsner",
-//     "2. IPA",
-//     "3. Belgian",
-//     "4. Stout",
-//     "5. Sour ALE"
-// ];
-//
-// var properties = [
-//     [0.2, 0.7, 0.6, 0.2, 1],
-//     [0.3, 0.6, 1, 0.2, 0.6],
-//     [1, 0, 0, 0, 0],
-//     [0.5, 0.6, 0.2, 0.7, 0.9],
-//     [0.6, 0.8, 0.7, 0.9, 1],
-//     [0, 1, 0.5, 0.5, 0.5],
-//     [0.8, 0.8, 1, 0.2, 0.3],
-//     [0.1, 0.2, 0.8, 1, 0],
-//     [0, 0, 0, 1, 0],
-//     [0, 0, 1, 0.3, 0.3],
-//     [0, 0.5, 0.5, 0.7, 1],
-//     [1, 0, 0.6, 0, 1]
-// ];
-//
-// var fset = [1, 1, 1, 1, 1];
-
 var n = Math.floor(Math.random() * questions.length-1) + 1;
 var options = [n];
 
 
 
 $('body').keypress(function (e) {
+	console.log(e.keyCode);
     var k = e.keyCode;
     if( k === key.left ) {
         play(false);
