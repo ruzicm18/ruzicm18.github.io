@@ -121,7 +121,7 @@ var options = [n];
 
 
 
-$('body').keypress(function (e) {
+$(document).on('keydown', function(e) {
 	console.log(e.keyCode);
     var k = e.keyCode;
     if( k === key.left ) {
